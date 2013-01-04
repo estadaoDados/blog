@@ -1,0 +1,140 @@
+#wpcontent select option {
+	padding-right: 5px;
+}
+.image-radio-option td {
+	padding-top: 15px;
+}
+.image-radio-option label {
+	display: block;
+	float: left;
+	margin: 0 30px 20px 2px;
+	position: relative;
+}
+.image-radio-option input {
+	margin: 0 0 10px;
+}
+.image-radio-option span {
+	display: block;
+	width: 164px;
+}
+.image-radio-option img {
+	margin: 0 0 0 -2px;
+}
+#link-color-example {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #dfdfdf;
+	margin: 0 7px 0 3px;
+	padding: 4px 14px;
+}
+
+body.rtl .image-radio-option label {
+	float: right;
+	margin: 0 2px 20px 30px;
+}
+
+.option-container {
+	width: 90%;
+}
+h3.option-toggle {
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	margin: 20px 0 0 0;
+	min-width: 600px;
+	border:1px solid #dfdfdf;
+	background-color: #F1F1F1;
+	background-image: -ms-linear-gradient(top, #F9F9F9, #ECECEC);
+	background-image: -moz-linear-gradient(top, #F9F9F9, #ECECEC);
+	background-image: -o-linear-gradient(top, #F9F9F9, #ECECEC);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#F9F9F9), to(#ECECEC));
+	background-image: -webkit-linear-gradient(top, #F9F9F9, #ECECEC);
+	background-image: linear-gradient(top, #F9F9F9, #ECECEC);
+	height: 34px;
+	line-height: 34px;
+	font-size: 15px;
+	font-weight: normal;
+	float: left;
+	padding: 0;
+    width: 98%;
+}
+h3.option-toggle a {
+	background:url(images/arrow-light.png) 99% 50% no-repeat;
+	color: #464646;
+	padding-left: 10px;
+	text-decoration: none;
+	display: block;
+	text-shadow:#fff 0 1px 0;
+}
+h3.option-toggle a:hover,
+h3.option-active a {
+	background:url(images/arrow-dark.png) 99% 50% no-repeat;
+	color: #444;
+}
+.option-content {
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	margin: 0;
+	min-width: 600px;
+	padding: 0;
+	border: 1px solid #dfdfdf;
+	border-top:none;
+	background: #fcfcfc;
+	overflow: hidden;
+	font-size: 12px;
+	clear: both;
+	color: #333;
+	width: 98%;
+}
+.option-content p {
+	padding-left: 10px;
+}
+
+#info-support {
+    padding: 20px 0;
+}
+#info-support .button {
+	border: none;
+	color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    height: 25px;
+    line-height: 27px;
+    margin-left: 10px;
+    padding: 0 15px;
+	text-shadow: none;
+	opacity: 1;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	box-shadow: 0px 1px 1px #2e2f31;
+	-moz-box-shadow:0px 1px 1px #2e2f31;
+	-webkit-box-shadow:0px 1px 1px #2e2f31;	
+}
+#info-support .button:hover {
+	opacity: 0.8;
+}
+#info-support .support {
+	background:url(images/brown-bg.jpg) center top repeat-x #a1913c;
+}
+#info-support .themes { 
+	background:url(images/blue-bg.jpg) center top repeat-x #4d6175;
+}
+#info-support .facebook { 
+	background:url(images/facebook-bg.jpg) center top repeat-x #3a589c;
+}
+#info-support .twitter {
+	background:url(images/twitter-bg.jpg) center top repeat-x #d90505;
+}
+#info-support .donate { 
+	background:url(images/green-bg.jpg) center top repeat-x #5e8c10;
+}
+
