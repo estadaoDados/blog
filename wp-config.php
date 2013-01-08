@@ -38,7 +38,7 @@ else {
    //die("Your heroku DATABASE_URL does not appear to be correctly specified.");
 }
 
-define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] .'/blog' );
+define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] );
 
 /**#@+
  * Authentication Unique Keys and Salts.
