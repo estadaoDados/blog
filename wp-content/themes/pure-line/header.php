@@ -6,7 +6,7 @@
  * @subpackage Template
  */
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html">
 
 <!--BEGIN html-->
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
@@ -19,7 +19,6 @@
 
 	<!-- Meta Tags -->
 	<meta http-equiv="Content-Type" content="<?php bloginfo( 'html_type' ); ?>; charset=<?php bloginfo('charset'); ?>" />
-  <link type="text/css" href="http://localhost/blog/wp-content/themes/pure-line/library/media/css/estadao.css" rel="stylesheet" /> <!-- Folha de estilos padrão do Estadão -->
 
 <?php wp_head(); ?>   
 
@@ -30,7 +29,7 @@
 
 <!--BEGIN body-->
 <body <?php body_class(); ?>>
-<!-- Barra Estadão Parceiros --><nav id="barraEstadaoParceiros"><a href="http://www.estadao.com.br/" target="_top" title="Estadão.com.br" class="lgBarraEstadaoParceiros"><img src="http://www.estadao.com.br/estadao/novo/img/logoEstadao.gif" width="150" height="27" border="0" alt="Estadão.com.br" target="_top" title="Estadão.com.br"></a><ul><li class="itemBarraEstadaoParceiros"><a href="http://politica.estadao.com.br/" target="_top" title="POLÍTICA">POLÍTICA</a></li><li class="itemBarraEstadaoParceiros"><a href="http://economia.estadao.com.br/" target="_top" title="ECONOMIA">ECONOMIA</a></li><li class="itemBarraEstadaoParceiros"><a href="http://www.estadao.com.br/internacional/" target="_top" title="INTERNACIONAL">INTERNACIONAL</a></li><li class="itemBarraEstadaoParceiros"><a href="http://www.estadao.com.br/esportes/" target="_top" title="ESPORTES">ESPORTES</a></li><li class="itemBarraEstadaoParceiros"><a href="http://link.estadao.com.br/" target="_top" title="TECNOLOGIA">TECNOLOGIA</a></li><li class="itemBarraEstadaoParceiros"><a href="http://divirta-se.estadao.com.br/" target="_top" title="DIVIRTA-SE">DIVIRTA-SE</a></li><li class="itemBarraEstadaoParceiros"><a href="http://pme.estadao.com.br/" target="_top" title="PME">PME</a></li><li class="itemBarraEstadaoParceiros"><a href="http://www.estadao.com.br/opiniao/" target="_top" title="OPINIÃO">OPINIÃO</a></li><li class="itemBarraEstadaoParceiros"><a href="http://radio.estadao.com.br/" target="_top" title="RÁDIO">RÁDIO</a></li><li class="itemBarraEstadaoParceiros"><a href="http://www.jt.com.br/" target="_top" title="JT">JT</a></li><li class="itemBarraEstadaoParceiros"><a href="http://www.territorioeldorado.limao.com.br/" target="_top" title="ELDORADO">ELDORADO</a></li><li class="itemBarraEstadaoParceiros"><a href="http://www.estadao.com.br/blogs/" target="_top" title="BLOGS">BLOGS</a></li><li class="itemBarraEstadaoParceiros"><a class="lastItemBarra" href="http://topicos.estadao.com.br/" target="_top" title="TÓPICOS">TÓPICOS</a></li></ul></nav>
+<!-- Barra Estadão Parceiros --><nav id="barraEstadaoParceiros"><img src="http://www.estadao.com.br/estadao/novo/img/logoEstadao.gif" width="150" height="27" border="0" alt="Estadão.com.br" target="_top" title="Estadão.com.br"><ul><li class="itemBarraEstadaoParceiros"><a href="http://politica.estadao.com.br/" target="_top" title="POLÍTICA">POLÍTICA</a></li><li class="itemBarraEstadaoParceiros"><a href="http://economia.estadao.com.br/" target="_top" title="ECONOMIA">ECONOMIA</a></li><li class="itemBarraEstadaoParceiros"><a href="http://www.estadao.com.br/internacional/" target="_top" title="INTERNACIONAL">INTERNACIONAL</a></li><li class="itemBarraEstadaoParceiros"><a href="http://www.estadao.com.br/esportes/" target="_top" title="ESPORTES">ESPORTES</a></li><li class="itemBarraEstadaoParceiros"><a href="http://link.estadao.com.br/" target="_top" title="TECNOLOGIA">TECNOLOGIA</a></li><li class="itemBarraEstadaoParceiros"><a href="http://divirta-se.estadao.com.br/" target="_top" title="DIVIRTA-SE">DIVIRTA-SE</a></li><li class="itemBarraEstadaoParceiros"><a href="http://pme.estadao.com.br/" target="_top" title="PME">PME</a></li><li class="itemBarraEstadaoParceiros"><a href="http://www.estadao.com.br/opiniao/" target="_top" title="OPINIÃO">OPINIÃO</a></li><li class="itemBarraEstadaoParceiros"><a href="http://radio.estadao.com.br/" target="_top" title="RÁDIO">RÁDIO</a></li><li class="itemBarraEstadaoParceiros"><a href="http://www.jt.com.br/" target="_top" title="JT">JT</a></li><li class="itemBarraEstadaoParceiros"><a href="http://www.territorioeldorado.limao.com.br/" target="_top" title="ELDORADO">ELDORADO</a></li><li class="itemBarraEstadaoParceiros"><a href="http://www.estadao.com.br/blogs/" target="_top" title="BLOGS">BLOGS</a></li><li class="itemBarraEstadaoParceiros"><a class="lastItemBarra" href="http://topicos.estadao.com.br/" target="_top" title="TÓPICOS">TÓPICOS</a></li></ul></nav>
 <?php $pureline_custom_background = pureline_get_option('pureline_custom_background','0'); if ($pureline_custom_background == "1") { ?>
 <div id="wrapper">
 <?php } ?>

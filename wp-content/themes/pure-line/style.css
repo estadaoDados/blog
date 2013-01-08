@@ -57,6 +57,10 @@ Date:         2/4/12
 /* Apply base theme styles and colors */
 @import url( 'library/media/css/base.css' );
 
+/* Apply Estadão bar css */
+@import url( 'library/media/css/estadao.css' );
+
+
 /**
  * Basic 2 column (content)(aside) fixed layout
  * 
