@@ -3,7 +3,7 @@
 Plugin Name: WP to Twitter
 Plugin URI: http://www.joedolson.com/articles/wp-to-twitter/
 Description: Posts a Tweet when you update your WordPress blog or post to your blogroll, using your chosen URL shortening service. Rich in features for customizing and promoting your Tweets.
-Version: 2.5.3
+Version: 2.5.4
 Author: Joseph Dolson
 Author URI: http://www.joedolson.com/
 */
@@ -52,7 +52,7 @@ require_once( plugin_dir_path(__FILE__).'/wp-to-twitter-manager.php' );
 require_once( plugin_dir_path(__FILE__).'/functions.php' );
 
 global $wpt_version,$jd_plugin_url;
-$wpt_version = "2.5.3";
+$wpt_version = "2.5.4";
 $plugin_dir = basename(dirname(__FILE__));
 load_plugin_textdomain( 'wp-to-twitter', false, dirname( plugin_basename( __FILE__ ) ) . '/lang' );
 
@@ -61,8 +61,6 @@ function wpt_pro_compatibility() {
 	$current_wptp_version = '1.3.1';
 	if ( version_compare( $wptp_version, $current_wptp_version, '<' ) ) {
 		echo "<div class='error notice'><p class='upgrade'>".sprintf( __('The current version of WP Tweets PRO is <strong>%s</strong>. Upgrade for best compatibility!','wp-to-twitter'),$current_wptp_version )."</p></div>";
-	} else {
-		echo "You're very attractive.";
 	}
 }
 
@@ -581,7 +579,7 @@ function in_allowed_category( $array ) {
 	if ( is_array( $array ) && is_array( $allowed_categories ) ) {
 	$common = @array_intersect( $array,$allowed_categories );
 		if ( WPT_DEBUG && function_exists( 'wpt_pro_exists' ) ) {
-			wp_mail('debug@joedolson.com','Category Limits Results', print_r($common,1) );
+			wp_mail('debug@joedolson.com','Category Limits Results: ---', print_r($common,1) );
 		}	
 		if ( count( $common ) >= 1 ) {
 			return true;
@@ -593,27 +591,26 @@ function in_allowed_category( $array ) {
 			wp_mail('debug@joedolson.com','Category limits not arrays.','Content not relevant.');
 		}
 		return true;
-		
 	}
 }
 
 function jd_post_info( $post_ID ) {
-	$get_post_info = get_post( $post_ID );
+	$post = get_post( $post_ID );
 	$category_ids = false;
 	$values = array();
 	$values['id'] = $post_ID;
 	// get post author
-	$values['authId'] = $get_post_info->post_author;
-		$postdate = $get_post_info->post_date;
-		$altformat = "Y-m-d H:i";		
+	$values['postinfo'] = $post;
+	$values['authId'] = $post->post_author;
+		$postdate = $post->post_date;
+		$altformat = "Y-m-d H:i:00";	
 		$dateformat = (get_option('jd_date_format')=='')?get_option('date_format'):get_option('jd_date_format');
 		$thisdate = mysql2date( $dateformat,$postdate );
 		$altdate = mysql2date( $altformat, $postdate );
 	$values['_postDate'] = $altdate;
 	$values['postDate'] = $thisdate;
-		$moddate = $get_post_info->post_modified;
-		$moddate = mysql2date( $altformat,$moddate );
-	$values['_postModified'] = $moddate;
+		$moddate = $post->post_modified;
+	$values['_postModified'] = mysql2date( $altformat,$moddate );
 	$values['postModified'] = mysql2date( $dateformat,$moddate );
 	// get first category
 		$category = null;
@@ -632,9 +629,9 @@ function jd_post_info( $post_ID ) {
 	$values['categoryIds'] = $category_ids;
 	$values['category'] = $category;
 		$excerpt_length = get_option( 'jd_post_excerpt' );
-	$post_excerpt = ( trim( $get_post_info->post_excerpt ) == "" )?@mb_substr( strip_tags( strip_shortcodes( $get_post_info->post_content ) ), 0, $excerpt_length ):@mb_substr( strip_tags( strip_shortcodes( $get_post_info->post_excerpt ) ), 0, $excerpt_length );
+	$post_excerpt = ( trim( $post->post_excerpt ) == "" )?@mb_substr( strip_tags( strip_shortcodes( $post->post_content ) ), 0, $excerpt_length ):@mb_substr( strip_tags( strip_shortcodes( $post->post_excerpt ) ), 0, $excerpt_length );
 	$values['postExcerpt'] = html_entity_decode( $post_excerpt, ENT_COMPAT, get_option('blog_charset') );
-	$thisposttitle =  stripcslashes( strip_tags( $get_post_info->post_title ) );
+	$thisposttitle =  stripcslashes( strip_tags( $post->post_title ) );
 		if ($thisposttitle == "") {
 			$thisposttitle =  stripcslashes( strip_tags( $_POST['title'] ) );
 		}
@@ -642,8 +639,8 @@ function jd_post_info( $post_ID ) {
 	$values['postLink'] = external_or_permalink( $post_ID );
 	$values['blogTitle'] = get_bloginfo( 'name' );
 	$values['shortUrl'] = wpt_short_url( $post_ID );
-	$values['postStatus'] = $get_post_info->post_status;
-	$values['postType'] = $get_post_info->post_type;
+	$values['postStatus'] = $post->post_status;
+	$values['postType'] = $post->post_type;
 	$values = apply_filters( 'wpt_post_info',$values, $post_ID );
 	return $values;
 }
@@ -669,10 +666,10 @@ function jd_get_post_meta( $post_ID, $value, $boolean ) {
 	return $return;
 }
 
-function jd_twit( $post_ID ) {
+function jd_twit( $post_ID, $type='instant' ) {
 	// new
 	if ( WPT_DEBUG && function_exists( 'wpt_pro_exists' ) ) {
-		wp_mail( 'debug@joedolson.com','jd_twit 0: jd_twit running',"Post ID: $post_ID" ); // DEBUG
+		wp_mail( 'debug@joedolson.com',"jd_twit 0: jd_twit running #$post_ID","Post ID: $post_ID" ); // DEBUG
 	}	
 	if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE || wp_is_post_revision($post_ID) ) { return $post_ID; }
 	wpt_check_version();
@@ -685,7 +682,7 @@ function jd_twit( $post_ID ) {
 		if ( isset($_POST['_inline_edit']) ) { $is_inline_edit = true; }
 	}
 	if ( WPT_DEBUG && function_exists( 'wpt_pro_exists' ) ) {
-		wp_mail( 'debug@joedolson.com','jd_twit 1: JD Tweet This Value:',"Tweet this: $jd_tweet_this" ); // DEBUG
+		wp_mail( 'debug@joedolson.com',"jd_twit 1: JD Tweet This Value: #$post_ID","Tweet this: $jd_tweet_this" ); // DEBUG
 	}	
 	if ( get_option('jd_tweet_default') == 0 ) { 
 		$test = ( $jd_tweet_this != 'no')?true:false;
@@ -701,20 +698,27 @@ function jd_twit( $post_ID ) {
 		}
 		/* debug data */
 		if ( WPT_DEBUG && function_exists( 'wpt_pro_exists' ) ) {
-			wp_mail('debug@joedolson.com','jd_twit 2: POST Debug Data',"Post_Info: ".print_r($post_info,1)."POST: ".print_r($_POST, 1) );
+			wp_mail('debug@joedolson.com',"jd_twit 2: POST Debug Data #$post_ID","Post_Info: ".print_r($post_info,1)."POST: ".print_r($_POST, 1) );
 		}
 		if ( function_exists( 'wpt_pro_exists' ) && wpt_pro_exists() == true && function_exists('wpt_filter_post_info') ) {
 			$filter = wpt_filter_post_info( $post_info );
 			if ( $filter == true ) {
 				if ( WPT_DEBUG && function_exists( 'wpt_pro_exists' ) ) { 
-					wp_mail( 'debug@joedolson.com','jd_twit 3: Post filtered',print_r($post_info,1) ); 
+					wp_mail( 'debug@joedolson.com',"jd_twit 3: Post filtered: #$post_ID",print_r($post_info,1) ); 
 				}
 				return false; 
 			}
 		}
 		$post_type = $post_info['postType'];
 		// if the post modified date and the post date are the same, this is new.
-		$new = wpt_date_compare( $post_info['_postModified'], $post_info['_postDate'] );
+		if ( $type == 'future' ) {
+			$new = 1; // if this is a future action, then it should be published regardless of relationship
+			if ( WPT_DEBUG && function_exists( 'wpt_pro_exists' ) ) { 
+				wp_mail( 'debug@joedolson.com',"jd_twit 4: Future post: #$post_ID",print_r($post_info,1) ); 
+			}			
+		} else {
+			$new = wpt_date_compare( $post_info['_postModified'], $post_info['_postDate'] );
+		}
 		// if this post is not previously published but has been backdated: lit. if post date is edited, but save option is 'publish'
 		if ( $new == 0 && ( isset( $_POST['edit_date'] ) && $_POST['edit_date'] == 1 && !isset( $_POST['save'] ) ) ) { $new = 1; }
 		// post modified = updated? // postdate == published? therefore: posts which have been updated after creation (scheduled, updated in draft) may not turn up as new. // postStatus == future
@@ -732,7 +736,7 @@ function jd_twit( $post_ID ) {
 				if ( ( $new == 0 && $post_info['postStatus'] != 'future' ) || $is_inline_edit == true ) {
 					// if this is an old post and editing updates are enabled
 					if ( WPT_DEBUG && function_exists( 'wpt_pro_exists' ) ) {
-						wp_mail( 'debug@joedolson.com','jd_twit 4a: Processed as an Edit',"Tweet this post: ".$post_info['postTitle'] ); // DEBUG
+						wp_mail( 'debug@joedolson.com',"jd_twit 4a: Processed as an Edit #$post_ID","Tweet this post: ".$post_info['postTitle']."\n".print_r($post_info,1) ); // DEBUG
 					}						
 					if ( $post_type_settings[$post_type]['post-edited-update'] == '1' ) {					
 						$nptext = stripcslashes( $post_type_settings[$post_type]['post-edited-text'] );
@@ -740,7 +744,7 @@ function jd_twit( $post_ID ) {
 					}
 				} else {
 					if ( WPT_DEBUG && function_exists( 'wpt_pro_exists' ) ) {
-						wp_mail( 'debug@joedolson.com','jd_twit 4b: Processed as a New Post',"Tweet this: ".$post_info['postTitle'] ); // DEBUG
+						wp_mail( 'debug@joedolson.com',"jd_twit 4b: Processed as a New Post #$post_ID","Tweet this: ".$post_info['postTitle']."\n".print_r($post_info,1) ); // DEBUG
 					}				
 					if ( $post_type_settings[$post_type]['post-published-update'] == '1' ) {
 						$nptext = stripcslashes( $post_type_settings[$post_type]['post-published-text'] );	
@@ -752,7 +756,7 @@ function jd_twit( $post_ID ) {
 				$template = ( $customTweet != "" ) ? $customTweet : $nptext;
 				$sentence = jd_truncate_tweet( $template, $post_info, $post_ID );
 					if ( WPT_DEBUG && function_exists( 'wpt_pro_exists' ) ) {
-						wp_mail( 'debug@joedolson.com','jd_twit 5: Tweet Truncated',"Truncated Tweet: $sentence" ); // DEBUG
+						wp_mail( 'debug@joedolson.com',"jd_twit 5: Tweet Truncated #$post_ID","Truncated Tweet: $sentence" ); // DEBUG
 					}					
 				if ( function_exists('wpt_pro_exists') && wpt_pro_exists() == true  ) {
 					$sentence2 = jd_truncate_tweet( $template, $post_info, $post_ID, false, $auth );
@@ -765,7 +769,7 @@ function jd_twit( $post_ID ) {
 					$continue = ( in_allowed_category( $post_info['categoryIds'] ) )?true:false;
 				}
 				if ( WPT_DEBUG && function_exists( 'wpt_pro_exists' ) && !$continue ) {
-					wp_mail('debug@joedolson.com','jd_twit 6: Category limits applied', print_r($post_info['categoryIds'],1) );
+					wp_mail('debug@joedolson.com',"jd_twit 6: Category limits applied #$post_ID", print_r($post_info['categoryIds'],1) );
 				}
 				if ( get_option('limit_categories') == '0' ) { $continue = true; }
 				if ( $continue ) {
@@ -782,14 +786,14 @@ function jd_twit( $post_ID ) {
 							$time = ( (int) $post_info['wpt_delay_tweet'] )*60;
 							wp_schedule_single_event( time()+$time, 'wpt_schedule_tweet_action', array( 'id'=>$auth, 'sentence'=>$sentence, 'rt'=>0, 'post_id'=>$post_ID ) );
 							if ( WPT_DEBUG && function_exists( 'wpt_pro_exists' ) ) {
-								wp_mail( 'debug@joedolson.com','jd_twit 7: JD Main Tweet Scheduled',print_r( array( 'id'=>$auth, 'sentence'=>$sentence, 'rt'=>0, 'post_id'=>$post_ID, 'timestamp'=>time()+$time, 'current_time'=>time(), 'timezone'=>get_option('gmt_offset') ),1) ); // DEBUG
+								wp_mail( 'debug@joedolson.com',"jd_twit 7: JD Main Tweet Scheduled #$post_ID",print_r( array( 'id'=>$auth, 'sentence'=>$sentence, 'rt'=>0, 'post_id'=>$post_ID, 'timestamp'=>time()+$time, 'current_time'=>time(), 'timezone'=>get_option('gmt_offset') ),1) ); // DEBUG
 							}								
 						
 							if ( $post_info['wpt_cotweet'] == 1 && $auth_verified ) {
 								$offset = rand(60,240);	// delay co-tweet by 1-4 minutes.						
 								wp_schedule_single_event( time()+$time+$offset, 'wpt_schedule_tweet_action', array( 'id'=>false, 'sentence'=>$sentence2, 'rt'=>0, 'post_id'=>$post_ID ) );
 									if ( WPT_DEBUG && function_exists( 'wpt_pro_exists' ) ) {
-										wp_mail( 'debug@joedolson.com','jd_twit 8: JD CoTweet Scheduled',print_r($post_info,1) ); // DEBUG
+										wp_mail( 'debug@joedolson.com',"jd_twit 8: JD CoTweet Scheduled #$post_ID",print_r($post_info,1) ); // DEBUG
 									}
 								}
 							$sendToTwitter = true;
@@ -1296,8 +1300,7 @@ add_action( 'admin_head', 'wpt_admin_script' );
 
 // Post the Custom Tweet into the post meta table
 function post_jd_twitter( $id ) {
-	if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE || wp_is_post_revision($id) || isset($_POST['_inline_edit']) ) { return $id; }
-	// update meta data to new format
+	if ( empty($_POST) || ( isset( $_POST['original_post_status'] ) && $_POST['original_post_status'] == 'auto-draft' ) || ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) || wp_is_post_revision($id) || isset($_POST['_inline_edit']) ) { return $id; }
 	if ( isset( $_POST['_yourls_keyword'] ) ) {
 		$yourls = $_POST[ '_yourls_keyword' ];
 		update_post_meta( $id, '_yourls_keyword', $yourls );			
@@ -1324,7 +1327,7 @@ function post_jd_twitter( $id ) {
 	// WPT PRO //	
 
 	if ( WPT_DEBUG && function_exists( 'wpt_pro_exists' ) ) {
-		wp_mail( 'debug@joedolson.com','Post Meta Inserted',print_r($_POST,1) ); // DEBUG
+		wp_mail( 'debug@joedolson.com',"Post Meta Inserted: #$id",print_r($_POST,1) ); // DEBUG
 	}		
 }
 
@@ -1496,10 +1499,19 @@ $post_type_settings = get_option('wpt_post_types');
 if ( is_array( $post_type_settings ) ) {
 	$post_types = array_keys($post_type_settings);
 	foreach ($post_types as $value ) {
+		add_action( 'publish_future_'.$value, 'wpt_twit_future', 16 );
 		add_action( 'publish_'.$value, 'post_jd_twitter', 10 );
-		add_action( 'publish_'.$value, 'jd_twit', 16 );	
+		add_action( 'publish_'.$value, 'wpt_twit_instant', 16 );	
 	}
 }
+
+function wpt_twit_future( $id ) {
+	jd_twit( $id, 'future' );
+}
+function wpt_twit_instant( $id ) {
+	jd_twit( $id, 'instant' );
+}
+
 if ( WPT_DEBUG && function_exists( 'wpt_pro_exists' ) ) {
 	wp_mail( 'debug@joedolson.com','initialize jd_twit',print_r( $post_types, 1 ) ); // DEBUG
 }

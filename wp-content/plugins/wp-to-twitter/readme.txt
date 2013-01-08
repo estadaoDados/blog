@@ -52,6 +52,11 @@ Contributions by [Thor Erik](http://www.thorerik.net), Bill Berry and [Andrea Ba
 
 == Changelog ==
 
+= 2.5.4 =
+
+* Modified system for handling scheduled posts to get around recent issues with Tweeting scheduled posts.
+* Update to Italian translation
+ 
 = 2.5.3 =
 
 * Truncation fix: Tweet not truncated if no template tags in use.
@@ -752,4 +757,4 @@ Writing and maintaining a plug-in is a lot of work. You can help me by providing
 
 == Upgrade Notice ==
 
-* 2.5.2 Minor bug fixes, language updates.
+* 2.5.4 Fix to scheduled posts bug.
