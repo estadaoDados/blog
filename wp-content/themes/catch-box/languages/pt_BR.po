@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/catch-box\n"
 "POT-Creation-Date: 2012-07-21 12:19+0530\n"
-"PO-Revision-Date: 2012-12-10 09:37-0300\n"
+"PO-Revision-Date: 2013-01-05 22:49+0530\n"
 "Last-Translator: Valdir <valdirtrombini@hotmail.com>\n"
 "Language-Team: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -383,8 +383,8 @@ msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
 #: ../footer.php:40
-msgid "Theme Catch Box by Catch Internet"
-msgstr "Tema Catch Box por Catch Internet"
+msgid "Theme Catch Box by Catch Themes"
+msgstr "Tema Catch Box por Catch Themes"
 
 #: ../footer.php:40
 #, php-format
@@ -477,20 +477,20 @@ msgstr "<strong>Seu Comentário está aguardando a nossa moderação. Obrigado p
 msgid "Reply <span>&darr;</span>"
 msgstr "Responder <span>&darr;</span>"
 
-#: ../functions.php:612
+#: ../functions.php:613
 #, php-format
-msgid "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgid "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date updated\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 msgstr "<span class=\"sep\">Postado em: </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> por: </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 
-#: ../functions.php:667
+#: ../functions.php:668
 msgid "ID"
 msgstr "ID"
 
-#: ../functions.php:877
+#: ../functions.php:878
 msgid "Name"
 msgstr "Nome"
 
-#: ../functions.php:879
+#: ../functions.php:880
 msgid "Email"
 msgstr "Email"
 
@@ -756,13 +756,13 @@ msgid "Theme Support"
 msgstr "Suporte ao tema"
 
 #: ../inc/theme-options.php:605
-msgid "http://catchthemes.com/themes/"
-msgstr "http://catchthemes.com/themes/"
+msgid "http://catchthemes.com/themes/catch-box-pro/"
+msgstr "http://catchthemes.com/themes/catch-box-pro/"
 
 #: ../inc/theme-options.php:605
 #: ../inc/theme-options.php:606
-msgid "More Themes"
-msgstr "Veja aqui outros temas"
+msgid "Upgrade to Catch Box Pro"
+msgstr "Upgrade para Catch Box Pro"
 
 #: ../inc/theme-options.php:608
 msgid "http://facebook.com/catchthemes"
@@ -779,7 +779,7 @@ msgid "http://twitter.com/#!/catchthemes"
 msgstr "http://twitter.com/#!/catchthemes"
 
 #: ../inc/theme-options.php:611
-msgid "Twiiter"
+msgid "Twitter"
 msgstr "Twitter"
 
 #: ../inc/theme-options.php:612
@@ -1023,31 +1023,80 @@ msgstr "URL do Link:"
 msgid "Alt text:"
 msgstr "Texto alternativo (alt text):"
 
-#. Theme Name of the plugin/theme
-msgid "Catch Box"
-msgstr "Catch Box"
+#~ msgid "More Themes"
+#~ msgstr "Veja aqui outros temas"
 
-#. Theme URI of the plugin/theme
-msgid "http://wordpress.org/extend/themes/catch-box"
-msgstr "http://wordpress.org/extend/themes/catch-box"
+#~ msgid "Catch Box"
+#~ msgstr "Catch Box"
 
-#. Description of the plugin/theme
-msgid "Catch Box is simple, lightweight, box shaped, and adaptable WordPress Theme for bloggers and professionals. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. 10 Best Reasons to use Catch Box Theme. 1. Responsive Web Design, 2. Custom Menus (Primary, Secondary and Footer menus), 3. Theme Options for light or dark or blue color scheme, custom link colors, three layout choices, two content choices between excerpt and content option in homepage, feed redirection, custom css styles, 4. Featured Sliders where you can define number of slides and post IDs, 5. Social Links (Facebook, Twitter, RSS, Linkedin, Pinterest, etc), 6. Webmaster Tools (Google, Yahoo and Bing site verification ID, Header and Footer codes), 7. Custom Backgrounds, 8. Custom Header, 9. Catchbox Adspace widget to add any type of Advertisements, and 10. Support popular plugins. Multilingual Ready (WPML) and also currently translated in Brazilian Portuguese, Spanish, Danish and Germany."
-msgstr "<strong>Catch Box</strong> é simples, leve e moldável as suas necessidades e muito fácil de configurar, é um Tema WordPress adaptável para blogueiros e profissionais. É baseado em HTML5, CSS3 e Web Design Responsivo, seu layout adapta-se para ser visto em vários dispositivos móveis. <strong>As 10 Melhores Razões para se usar o Tema Catch Box.</strong> <strong>1-</strong> Web Design responsivo, <strong>2-</strong> Menus personalizados (menu primário, menu secundário e também menu de rodapé), <strong>3-</strong> Opções do tema, cores para o esquema claro ou esquema de cores escuras, as cores dos links são personalizaveis, três opções de layout, duas opções de conteúdo entre resumo e a opção de conteúdo completo na página inicial, redirecionamento do Feed, folha de estilo CSS personalizados por você, <strong>4-</strong> Slide Show em destaque (Home), onde você pode definir o número de slides que for melhor para apresentar ao seu visitante, e organiza-los com as identificações únicas (ID) das suas postagens, <strong>5-</strong> Links para as Redes Sociais mais conhecidas (Facebook, Google +, Twitter, Youtube, Vimeo, MySpace, RSS, Linkedin, Pinterest, etc...), <strong>6-</strong> Ferramentas para Webmaster (Google, Yahoo e o Bing para colocação do código de verificação ID de propriedade no Cabeçalho ou no Rodapé), <strong>7-</strong> Fundos personalizados, <strong>8-</strong> Personalização completa do Cabeçalho, <strong>9-</strong> Catchbox Adspace widget para adicionar qualquer tipo de anúncio publicitário ou propaganda relacionada ao assunto do seu website ou blog, e <strong>10-</strong> Suporte aos plugins mais populares utilizados no WordPress. E agora, um presente para você! O Tema <strong>Catch Box</strong> está traduzido para os seguintes idiomas: para o Português do Brasil, Espanhol, Dinamarquês e Alemanha."
+#~ msgid "http://wordpress.org/extend/themes/catch-box"
+#~ msgstr "http://wordpress.org/extend/themes/catch-box"
 
-#. Author of the plugin/theme
-msgid "Catch Themes Team"
-msgstr "Equipe Catch Themes"
+#~ msgid ""
+#~ "Catch Box is simple, lightweight, box shaped, and adaptable WordPress "
+#~ "Theme for bloggers and professionals. It is based on HTML5, CSS3 and "
+#~ "Responsive Web Design to view in various devices. 10 Best Reasons to use "
+#~ "Catch Box Theme. 1. Responsive Web Design, 2. Custom Menus (Primary, "
+#~ "Secondary and Footer menus), 3. Theme Options for light or dark or blue "
+#~ "color scheme, custom link colors, three layout choices, two content "
+#~ "choices between excerpt and content option in homepage, feed redirection, "
+#~ "custom css styles, 4. Featured Sliders where you can define number of "
+#~ "slides and post IDs, 5. Social Links (Facebook, Twitter, RSS, Linkedin, "
+#~ "Pinterest, etc), 6. Webmaster Tools (Google, Yahoo and Bing site "
+#~ "verification ID, Header and Footer codes), 7. Custom Backgrounds, 8. "
+#~ "Custom Header, 9. Catchbox Adspace widget to add any type of "
+#~ "Advertisements, and 10. Support popular plugins. Multilingual Ready "
+#~ "(WPML) and also currently translated in Brazilian Portuguese, Spanish, "
+#~ "Danish and Germany."
+#~ msgstr ""
+#~ "<strong>Catch Box</strong> é simples, leve e moldável as suas "
+#~ "necessidades e muito fácil de configurar, é um Tema WordPress adaptável "
+#~ "para blogueiros e profissionais. É baseado em HTML5, CSS3 e Web Design "
+#~ "Responsivo, seu layout adapta-se para ser visto em vários dispositivos "
+#~ "móveis. <strong>As 10 Melhores Razões para se usar o Tema Catch Box.</"
+#~ "strong> <strong>1-</strong> Web Design responsivo, <strong>2-</strong> "
+#~ "Menus personalizados (menu primário, menu secundário e também menu de "
+#~ "rodapé), <strong>3-</strong> Opções do tema, cores para o esquema claro "
+#~ "ou esquema de cores escuras, as cores dos links são personalizaveis, três "
+#~ "opções de layout, duas opções de conteúdo entre resumo e a opção de "
+#~ "conteúdo completo na página inicial, redirecionamento do Feed, folha de "
+#~ "estilo CSS personalizados por você, <strong>4-</strong> Slide Show em "
+#~ "destaque (Home), onde você pode definir o número de slides que for melhor "
+#~ "para apresentar ao seu visitante, e organiza-los com as identificações "
+#~ "únicas (ID) das suas postagens, <strong>5-</strong> Links para as Redes "
+#~ "Sociais mais conhecidas (Facebook, Google +, Twitter, Youtube, Vimeo, "
+#~ "MySpace, RSS, Linkedin, Pinterest, etc...), <strong>6-</strong> "
+#~ "Ferramentas para Webmaster (Google, Yahoo e o Bing para colocação do "
+#~ "código de verificação ID de propriedade no Cabeçalho ou no Rodapé), "
+#~ "<strong>7-</strong> Fundos personalizados, <strong>8-</strong> "
+#~ "Personalização completa do Cabeçalho, <strong>9-</strong> Catchbox "
+#~ "Adspace widget para adicionar qualquer tipo de anúncio publicitário ou "
+#~ "propaganda relacionada ao assunto do seu website ou blog, e <strong>10-</"
+#~ "strong> Suporte aos plugins mais populares utilizados no WordPress. E "
+#~ "agora, um presente para você! O Tema <strong>Catch Box</strong> está "
+#~ "traduzido para os seguintes idiomas: para o Português do Brasil, "
+#~ "Espanhol, Dinamarquês e Alemanha."
 
-#. Tags of the plugin/theme
-msgid "dark, light, blue, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready"
-msgstr "escuro, claro, azul, branco, preto, cinza, de uma coluna, de duas colunas, barra lateral à esquerda, barra lateral à direita, com largura fixa, com largura flexível, fundo personalizado, personalização de cores, cabeçalho personalizado, menu personalizado, editor de estilo, destaque da imagem no cabeçalho, imagens em destaque, modelo de largura total, microformatos,formatos de post, suporte de escrita da direita para esquerda, pegajosa post, opções de tema, a tradução pronta."
+#~ msgid "Catch Themes Team"
+#~ msgstr "Equipe Catch Themes"
 
-#. Template Name of the plugin/theme
-msgid "Disable Sidebar Template"
-msgstr "Desativar a barra lateral no Tema"
+#~ msgid ""
+#~ "dark, light, blue, white, black, gray, one-column, two-columns, left-"
+#~ "sidebar, right-sidebar, fixed-width, flexible-width, custom-background, "
+#~ "custom-colors, custom-header, custom-menu, editor-style, featured-image-"
+#~ "header, featured-images, full-width-template, microformats, post-formats, "
+#~ "rtl-language-support, sticky-post, theme-options, translation-ready"
+#~ msgstr ""
+#~ "escuro, claro, azul, branco, preto, cinza, de uma coluna, de duas "
+#~ "colunas, barra lateral à esquerda, barra lateral à direita, com largura "
+#~ "fixa, com largura flexível, fundo personalizado, personalização de cores, "
+#~ "cabeçalho personalizado, menu personalizado, editor de estilo, destaque "
+#~ "da imagem no cabeçalho, imagens em destaque, modelo de largura total, "
+#~ "microformatos,formatos de post, suporte de escrita da direita para "
+#~ "esquerda, pegajosa post, opções de tema, a tradução pronta."
 
-#. Template Name of the plugin/theme
-msgid "Full Width Disable Sidebar Template"
-msgstr "Desativar predefinição da barra lateral com largura total"
+#~ msgid "Disable Sidebar Template"
+#~ msgstr "Desativar a barra lateral no Tema"
 
+#~ msgid "Full Width Disable Sidebar Template"
+#~ msgstr "Desativar predefinição da barra lateral com largura total"

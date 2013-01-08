@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/catch-box\n"
 "POT-Creation-Date: 2012-07-21 12:19+0530\n"
-"PO-Revision-Date: 2012-12-19 23:39+0530\n"
+"PO-Revision-Date: 2013-01-05 22:30+0530\n"
 "Last-Translator: César Gómez <cesar@temperatio.com>\n"
 "Language-Team: César Gómez <cesar@temperatio.com>\n"
 "MIME-Version: 1.0\n"
@@ -382,8 +382,8 @@ msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
 #: ../footer.php:40
-msgid "Theme Catch Box by Catch Internet"
-msgstr "Tema Catch Box pro Catch Internet"
+msgid "Theme Catch Box by Catch Themes"
+msgstr "Tema Catch Box pro Catch Themes"
 
 #: ../footer.php:40
 #, php-format
@@ -476,20 +476,20 @@ msgstr "Tu comentario está en espera de moderación."
 msgid "Reply <span>&darr;</span>"
 msgstr "Responder <span>&darr;</span>"
 
-#: ../functions.php:612
+#: ../functions.php:613
 #, php-format
-msgid "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgid "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date updated\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 msgstr "<span class=\"sep\">Publicado el</span> <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a> <span class=\"by-author\"><span class=\"sep\"> por </span> <span class=\"author vcard\"> <a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 
-#: ../functions.php:667
+#: ../functions.php:668
 msgid "ID"
 msgstr "ID"
 
-#: ../functions.php:877
+#: ../functions.php:878
 msgid "Name"
 msgstr "Nombre"
 
-#: ../functions.php:879
+#: ../functions.php:880
 msgid "Email"
 msgstr "Email"
 
@@ -755,13 +755,13 @@ msgid "Theme Support"
 msgstr "Soporte del Tema"
 
 #: ../inc/theme-options.php:605
-msgid "http://catchthemes.com/themes/"
-msgstr "http://catchthemes.com/themes/"
+msgid "http://catchthemes.com/themes/catch-box-pro/"
+msgstr "http://catchthemes.com/themes/catch-box-pro/"
 
 #: ../inc/theme-options.php:605
 #: ../inc/theme-options.php:606
-msgid "More Themes"
-msgstr "Más Temas"
+msgid "Upgrade to Catch Box Pro"
+msgstr "Actualizar a Catch Box Pro"
 
 #: ../inc/theme-options.php:608
 msgid "http://facebook.com/catchthemes"
@@ -778,7 +778,7 @@ msgid "http://twitter.com/#!/catchthemes"
 msgstr "http://twitter.com/#!/catchtheme "
 
 #: ../inc/theme-options.php:611
-msgid "Twiiter"
+msgid "Twitter"
 msgstr "Twitter"
 
 #: ../inc/theme-options.php:612
@@ -1021,6 +1021,9 @@ msgstr "URL:"
 #: ../inc/widgets.php:57
 msgid "Alt text:"
 msgstr "Texto alternativo:"
+
+#~ msgid "More Themes"
+#~ msgstr "Más Temas"
 
 #~ msgid "Catch Box"
 #~ msgstr "Catch Box"

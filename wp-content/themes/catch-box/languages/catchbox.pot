@@ -382,7 +382,7 @@ msgid "http://catchthemes.com/"
 msgstr ""
 
 #: ../footer.php:40
-msgid "Theme Catch Box by Catch Internet"
+msgid "Theme Catch Box by Catch Themes"
 msgstr ""
 
 #: ../footer.php:40
@@ -760,7 +760,7 @@ msgstr ""
 
 #: ../inc/theme-options.php:605
 #: ../inc/theme-options.php:606
-msgid "More Themes"
+msgid "Upgrade to Catch Box Pro"
 msgstr ""
 
 #: ../inc/theme-options.php:608

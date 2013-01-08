@@ -599,20 +599,20 @@ function catchbox_theme_options_render_page() {
         </h2>
         
 		<div id="info-support">
-                <a class="support button" href="<?php echo esc_url(__('http://catchthemes.com/support/','catchbox')); ?>" title="<?php esc_attr_e('Theme Support', 'catchbox'); ?>" target="_blank">
-                <?php printf(__('Theme Support','catchbox')); ?></a>
+           	<a class="support button" href="<?php echo esc_url(__('http://catchthemes.com/support/','catchbox')); ?>" title="<?php esc_attr_e('Theme Support', 'catchbox'); ?>" target="_blank">
+          	<?php printf(__('Theme Support','catchbox')); ?></a>
                 
-                <a class="themes button" href="<?php echo esc_url(__('http://catchthemes.com/themes/','catchbox')); ?>" title="<?php esc_attr_e('More Themes', 'catchbox'); ?>" target="_blank">
-                <?php printf(__('More Themes','catchbox')); ?></a>
+        	<a class="themes button" href="<?php echo esc_url(__('http://catchthemes.com/themes/catch-box-pro/','catchbox')); ?>" title="<?php esc_attr_e('Upgrade to Catch Box Pro', 'catchbox'); ?>" target="_blank">
+            <?php printf(__('Upgrade to Catch Box Pro','catchbox')); ?></a>
                 
-                <a class="facebook button" href="<?php echo esc_url(__('http://facebook.com/catchthemes','catchbox')); ?>" title="<?php esc_attr_e('Facebook', 'catchbox'); ?>" target="_blank">
-                <?php printf(__('Facebook','catchbox')); ?></a>
+            <a class="facebook button" href="<?php echo esc_url(__('http://facebook.com/catchthemes','catchbox')); ?>" title="<?php esc_attr_e('Facebook', 'catchbox'); ?>" target="_blank">
+            <?php printf(__('Facebook','catchbox')); ?></a>
                 
-                <a class="twitter button" href="<?php echo esc_url(__('http://twitter.com/#!/catchthemes','catchbox')); ?>" title="<?php esc_attr_e('Twiiter', 'catchbox'); ?>" target="_blank">
-                <?php printf(__('Twitter','catchbox')); ?></a>
+            <a class="twitter button" href="<?php echo esc_url(__('http://twitter.com/#!/catchthemes','catchbox')); ?>" title="<?php esc_attr_e('Twitter', 'catchbox'); ?>" target="_blank">
+            <?php printf(__('Twitter','catchbox')); ?></a>
                 
-                <a class="donate button" href="<?php echo esc_url(__('http://catchthemes.com/donate/','catchbox')); ?>" title="<?php esc_attr_e('Donate Now', 'catchbox'); ?>" target="_blank">
-                <?php printf(__('Donate Now','catchbox')); ?></a>
+            <a class="donate button" href="<?php echo esc_url(__('http://catchthemes.com/donate/','catchbox')); ?>" title="<?php esc_attr_e('Donate Now', 'catchbox'); ?>" target="_blank">
+            <?php printf(__('Donate Now','catchbox')); ?></a>
         </div>        
             
 		<?php settings_errors(); ?>

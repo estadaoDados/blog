@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/catch-box\n"
 "POT-Creation-Date: 2012-09-28 17:13+0530\n"
-"PO-Revision-Date: 2012-12-13 00:04+0530\n"
+"PO-Revision-Date: 2013-01-05 22:14+0530\n"
 "Last-Translator: H.P.Brinkmann\n"
 "Language-Team: H.P. Brinkmann\n"
 "MIME-Version: 1.0\n"
@@ -142,7 +142,7 @@ msgstr "Kommentare abgeschaltet."
 #: ../content.php:46
 #, php-format
 msgid "Permalink to %s"
-msgstr ""
+msgstr "Permanenter Link zu %s"
 
 #: ../content-aside.php:17
 msgid "Aside"
@@ -359,11 +359,11 @@ msgstr "Seitenfuß-Menü"
 
 #: ../footer.php:31
 msgid "Copyright &copy;"
-msgstr ""
+msgstr "Copyright &copy;"
 
 #: ../footer.php:35
 msgid ". All Rights Reserved."
-msgstr ""
+msgstr ". Alle Rechte Vorbehalten."
 
 #: ../footer.php:38
 msgid "http://wordpress.org/"
@@ -383,8 +383,8 @@ msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
 #: ../footer.php:40
-msgid "Theme Catch Box by Catch Internet"
-msgstr ""
+msgid "Theme Catch Box by Catch Themes"
+msgstr "Theme Catch Box durch Catch Themes"
 
 #: ../footer.php:40
 #, php-format
@@ -477,20 +477,20 @@ msgstr "Ihr Kommentar wartet auf Freischaltung."
 msgid "Reply <span>&darr;</span>"
 msgstr "Antworten <span>&darr;</span>"
 
-#: ../functions.php:612
+#: ../functions.php:613
 #, php-format
-msgid "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgid "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date updated\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 msgstr "<span class=\"sep\">Veröffentlicht am </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> von </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 
-#: ../functions.php:667
+#: ../functions.php:668
 msgid "ID"
 msgstr "ID"
 
-#: ../functions.php:877
+#: ../functions.php:878
 msgid "Name"
 msgstr "Name"
 
-#: ../functions.php:879
+#: ../functions.php:880
 msgid "Email"
 msgstr "E-Mail"
 
@@ -668,7 +668,7 @@ msgstr "Slider Manche Themes bieten Anpassungsoptionen, die in den Theme-Optione
 
 #: ../inc/theme-options.php:291
 msgid "Add/Change Favicon"
-msgstr ""
+msgstr "Add/Change Favicon"
 
 #: ../inc/theme-options.php:305
 msgid "Light"
@@ -704,7 +704,7 @@ msgstr "Zeige ganzen Inhalt"
 
 #: ../inc/theme-options.php:467
 msgid "Select a Color"
-msgstr ""
+msgstr "Wählen Sie eine Farbe"
 
 #: ../inc/theme-options.php:470
 #, php-format
@@ -756,13 +756,13 @@ msgid "Theme Support"
 msgstr "Theme-Support"
 
 #: ../inc/theme-options.php:605
-msgid "http://catchthemes.com/themes/"
-msgstr "http://catchthemes.com/"
+msgid "http://catchthemes.com/themes/catch-box-pro/"
+msgstr "http://catchthemes.com/themes/catch-box-pro/"
 
 #: ../inc/theme-options.php:605
 #: ../inc/theme-options.php:606
-msgid "More Themes"
-msgstr "Mehr Themes"
+msgid "Upgrade to Catch Box Pro"
+msgstr "Upgrade auf Catch Box Pro"
 
 #: ../inc/theme-options.php:608
 msgid "http://facebook.com/catchthemes"
@@ -779,7 +779,7 @@ msgid "http://twitter.com/#!/catchthemes"
 msgstr "http://twitter.com/#!/catchthemes"
 
 #: ../inc/theme-options.php:611
-msgid "Twiiter"
+msgid "Twitter"
 msgstr "Twitter"
 
 #: ../inc/theme-options.php:612
@@ -837,7 +837,7 @@ msgstr "<strong>Note</strong>: Fügen Sie hier die IDs der Artikel ein, die im S
 #: ../inc/theme-options.php:922
 #: ../inc/theme-options.php:947
 msgid "Save"
-msgstr ""
+msgstr "Speichern"
 
 #: ../inc/theme-options.php:694
 msgid "Slider Effect Options"
@@ -1024,3 +1024,5 @@ msgstr "Link-URL:"
 msgid "Alt text:"
 msgstr "Alt-Text:"
 
+#~ msgid "More Themes"
+#~ msgstr "Mehr Themes"
