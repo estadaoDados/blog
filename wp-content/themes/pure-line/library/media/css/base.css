@@ -22,7 +22,7 @@ body, input, textarea { font: 13px/1.5 "PT Sans",serif; }
 
 .entry-meta { margin-bottom: 10px;text-shadow:0 1px 0px #fff;  }
 .entry-meta .meta-sep {margin:0 5px; }
-.entry-header {clear:both;margin:0 0 15px 0;padding:0;}
+.entry-header {clear:both;margin:0 0 5px 0;padding:0;}
 .entry-header a {color:#555;}
 .entry-header .comment-count a {color:#777;font-weight:bold;}
 .entry-footer {font-size:13px;clear:both;margin:10px 0;text-align:center;}
@@ -78,12 +78,12 @@ text-shadow:none;
 
 
 
-p, pre, ul, ol, dl, dd, blockquote, address, table, fieldset, form, .gallery-row, .comment-list ul, .comment-list ol { margin-bottom: 20px; }
+p, pre, ul, ol, dl, dd, blockquote, address, table, fieldset, form, .gallery-row, .comment-list ul, .comment-list ol { margin-bottom: 10px; }
 .comment, .navigation-links { margin-bottom: 40px; }
 .nav-top .navigation-links {margin-bottom:20px;}
 
 /* Header */
-.header {padding:0 0 30px 0;margin: 0 auto; }
+.header {padding:0 ;margin: 0 auto; }
 #logo-image {float:left;margin-right:20px;} 
 
 /* Content Background */
@@ -117,7 +117,6 @@ p, pre, ul, ol, dl, dd, blockquote, address, table, fieldset, form, .gallery-row
     color: #333333;
     font: italic bold 11px/18px Georgia, serif;
     text-shadow: 0 1px 0 #FFFFFF;
-    top:-26px;
     position:relative;
     float:left;display:block;width:100%;
     background:#cfd8df url(../images/menu-bg.jpg) repeat; 
@@ -287,9 +286,9 @@ h6 { font-size: 14px; line-height: 18px; }
 .page-title { font-size: 26px; font-weight: bold;letter-spacing:-1px;text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.9), 2px 2px 0 rgba(0, 0, 0, 0.1);}
 .page-title span { font-weight: normal; }
 .entry-title, .entry-title a { font: 30px/30px "Vollkorn", serif;color: #51545c; font-weight:normal; letter-spacing:-1px;text-shadow: 0 1px 0px #fff;}
-.entry-title, .entry-title a:hover { color: #000; text-decoration: none; }
+.entry-title, .entry-title a:hover { margin-bottom:5px ;color: #000; text-decoration: none; }
 .type-page .entry-title {float:left;}
-.entry-content {clear:both;font-size:15px;margin-top:35px;}
+.entry-content {clear:both;font-size:15px;margin-top:20px;}
 .hentry {background:url('../images/divider-tile.png') bottom left repeat-x;padding-bottom:25px;}
 .entry-content .read-more { margin:0 auto;font-size:18px;font-weight:bold;}
 .entry-content .read-more a {font:italic bold 11px Georgia;border:none;text-decoration:none;
@@ -584,8 +583,8 @@ background:rgba(0,0,0,.02);-webkit-border-radius:3px;-moz-border-radius:3px;-bor
 /* [gallery] + navigation clearfix */
 .gallery-row:after, .navigation-links:after, .container:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
 .gallery-row, .navigation-links, .container { display: block; }
-.container-header {margin-bottom:0px!important;}
-.container-menu {margin:0 auto;padding-bottom:10px;position:relative;z-index:99;}
+.container-header {margin-top:0px!importante;margin-bottom:0px!important;}
+.container-menu {margin:0 auto !important; position:relative; z-index:99;}
 .container-center {margin:0px auto;}
 .container-footer {margin-bottom:0;position:relative;}
 
@@ -758,5 +757,8 @@ a.share-email:hover {background-position:0 -121px;}
 
 
 
-
+/* Outros estadão dados */
+.addtoany_share_save_container {
+  margin: 10px 0 !important; 
+}
 
