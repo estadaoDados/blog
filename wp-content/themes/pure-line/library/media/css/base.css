@@ -3,7 +3,11 @@
  */
 
 /* Document Body */
-body {min-width:960px;background: url("../images/main-bg.jpg") repeat scroll left top transparent;}
+body {
+  min-width: 960px;
+  /* background: url("../images/main-bg.jpg") repeat scroll left top transparent; */
+  background-color: #ffffff;
+}
 body, input, textarea { font: 13px/1.5 "PT Sans",serif; }
 
 /* Font Styles */
