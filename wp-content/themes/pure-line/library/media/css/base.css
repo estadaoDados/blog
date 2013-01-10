@@ -256,6 +256,7 @@ h6 { font-size: 14px; line-height: 18px; }
 .widget-title {letter-spacing:0;font:normal 22px/22px "vollkorn",serif;z-index:1;position:relative;display:block;margin-bottom:10px;color:#555;text-shadow:0 1px 0px #fff;padding:10px 0px;
 }
 .widget-title a {color:#fff !important;text-shadow:0 1px 3px #444 !important;border-bottom:none !important;}
+.footer .widget-content {margin:0;padding:0;}
 .widget-content {position:relative;margin:0 0 35px 0;padding:0 0 21px 0;font-size:13px;  
   }
 
