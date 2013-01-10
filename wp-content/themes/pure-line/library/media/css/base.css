@@ -766,4 +766,8 @@ a.share-email:hover {background-position:0 -121px;}
 .addtoany_share_save_container {
   margin: 10px 0 !important; 
 }
-
+.post span.edit-post a {
+  font-size:13px;
+  margin-top:0;
+  margin-bottom:0;
+}
