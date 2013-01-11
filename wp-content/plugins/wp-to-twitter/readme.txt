@@ -52,6 +52,10 @@ Contributions by [Thor Erik](http://www.thorerik.net), Bill Berry and [Andrea Ba
 
 == Changelog ==
 
+= 2.5.5 =
+
+* Backed out an efficiency tweak that didn't work as expected. 
+
 = 2.5.4 =
 
 * Modified system for handling scheduled posts to get around recent issues with Tweeting scheduled posts.
