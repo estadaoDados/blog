@@ -29,10 +29,9 @@ body, input, textarea { font: 13px/1.5 "PT Sans",serif; }
 .entry-header {clear:both;margin:0 0 5px 0;padding:0;}
 .entry-header a {color:#555;}
 .entry-header .comment-count a {color:#777;font-weight:bold;}
-.entry-footer {font-size:13px;clear:both;margin:10px 0;text-align:center;}
-.single .entry-footer {padding:10px;background: none repeat scroll 0 0 rgba(0, 0, 0, 0.03);-moz-border-radius: 50px;-webkit-border-radius: 50px;-border-radius: 50px;border-radius: 50px;}
-.entry-footer a {color:#888;}
-.entry-footer a:hover {text-decoration:none;border-bottom-color:#333;color:#333;}
+.entry-footer {font-size:13px;clear:both;margin:10px 0;text-align:center;padding:10px;background: none repeat scroll 0 0 rgba(0, 0, 0, 0.1);-moz-border-radius: 50px;-webkit-border-radius: 50px;-border-radius: 50px;border-radius: 50px;}
+.entry-footer a {color:#6D6D6D;}
+.entry-footer a:hover {text-decoration:none;border-bottom-color:#333;color:#222;font-size:16px;}
 .edit-post, .edit-comment, .edit-page {visibility:hidden;}
 .edit-post a, .edit-comment a, .edit-page a {background:#dfce94 url('../images/icon-edit.png') 5px 5px no-repeat;background:rgba(239,220,156,.9) url('../images/icon-edit.png') 5px 5px no-repeat;padding:4px;padding-left:25px;margin-left:5px;
 color:#444;
@@ -291,7 +290,7 @@ h6 { font-size: 14px; line-height: 18px; }
 .page-title { font-size: 26px; font-weight: bold;letter-spacing:-1px;text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.9), 2px 2px 0 rgba(0, 0, 0, 0.1);}
 .page-title span { font-weight: normal; }
 .entry-title, .entry-title a { font: 37px/37px "Georgia", serif;color: #005081; font-weight:normal; letter-spacing:-1px;text-shadow: 0 1px 0px #fff;}
-.entry-title, .entry-title a:hover { margin-bottom:5px ;color: #000; text-decoration: none; }
+.entry-title:hover, .entry-title a:hover { margin-bottom:5px ;color: #000; text-decoration: none; }
 .type-page .entry-title {float:left;}
 .entry-content {clear:both;font-size:15px;margin-top:20px;}
 .hentry {background:url('../images/divider-tile.png') bottom left repeat-x;padding-bottom:25px;}
