@@ -1,4 +1,4 @@
 wp-config.php
-wp-content/uploads
+wp-content/uploads/*
 sitemap.xml
 sitemap.xml.gz
