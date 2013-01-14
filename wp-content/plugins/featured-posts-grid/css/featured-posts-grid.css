@@ -1,0 +1,136 @@
+.fpg-wrapper * {
+margin: 0; padding: 0; border: 0;
+}
+
+.fpg-wrapper {
+margin: 0px auto;
+position: relative;
+overflow: visible;
+}
+
+.fpg-page {
+}
+
+ul.fpg-row {
+position: relative;
+height: auto;
+background: transparent;
+list-style: none;
+overflow: visible;
+}
+
+ul.fpg-row li.fpg-item .fpg-item-wrapper a {
+display: block;
+text-decoration: none;
+}
+
+li.fpg-item {
+float: left;
+}
+
+li.fpg-item.fpg-first-col {
+}
+
+.fpg-item-wrapper {
+position: relative;
+overflow: hidden;
+float: right;
+}
+
+.fpg-item-wrapper:hover {
+}
+
+li.fpg-item.fpg-first-col .fpg-item-wrapper {
+}
+
+img.fpg-image {
+margin: auto;
+position: relative;
+display: block;
+}
+
+.fpg-text {
+position: absolute;
+left: 0px;
+bottom: 0px;
+float: left;
+padding: 3px 5px;
+}
+
+h3.fpg-title, h3.fpg-title a:link, h3.fpg-title a:visited, h3.fpg-title a:active {
+text-decoration: none;
+}
+
+p.fpg-excerpt, p.fpg-excerpt a:link, p.fpg-excerpt a:visited, p.fpg-excerpt a:active {
+text-decoration: none;
+clear: both;
+}
+
+p.fpg-author, p.fpg-author a:link, p.fpg-author a:visited, p.fpg-author a:active {
+text-decoration: none;
+float: left;
+}
+
+p.fpg-date, p.fpg-date a:link, p.fpg-date a:visited, p.fpg-date a:active {
+text-decoration: none;
+}
+
+
+
+/**** ARROWS ****/
+.fpg-arrow-wrapper {
+overflow: hidden;
+margin: 10px auto 0px;
+}
+
+.fpg-arrow-left, 
+.fpg-arrow-right {
+position: relative;
+height: 25px;
+width: 30px;
+margin-top: 8px;
+cursor: pointer;
+overflow: hidden;
+background-repeat: no-repeat;
+background-color: transparent;
+}
+
+.fpg-arrow-left {
+float: left;
+background-position: 0px 0px;
+}
+
+.fpg-arrow-right {
+float: right;
+background-position: -30px 0px;
+}
+
+.fpg-arrow-left:hover {
+background-position: 0px -25px;
+}
+
+.fpg-arrow-right:hover {
+background-position: -30px -25px;
+}
+
+.fpg-arrow-left:active {
+background-position: 0px 0px;
+}
+
+.fpg-arrow-right:active {
+background-position: -30px 0px;
+}
+
+.fpg-arrow-pip {
+position: relative;
+height: 40px;
+float: left;
+cursor: pointer;
+background-repeat: no-repeat;
+background-color: transparent;
+text-indent: -9999px;
+}
+
+.fpg-arrow-pip.fpg-selected-pip, .fpg-arrow-pip:hover {
+background-position: -40px 0px;
+}
