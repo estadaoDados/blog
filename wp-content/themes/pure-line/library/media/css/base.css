@@ -775,3 +775,7 @@ a.share-email:hover {background-position:0 -121px;}
   font-style: italic;
   font-size: 15px;
 }
+
+h3.fpg-title {
+  letter-spacing: 0px;
+}
