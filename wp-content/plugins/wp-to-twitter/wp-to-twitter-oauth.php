@@ -4,7 +4,7 @@ function wtt_oauth_test( $auth=false, $context='' ) {
 	if ( !$auth ) {
 		return ( wtt_oauth_credentials_to_hash() == get_option('wtt_oauth_hash') );
 	} else {
-		$return = ( wtt_oauth_credentials_to_hash( $auth ) == get_user_meta( $auth,'wtt_oauth_hash',true ) );
+		$return = ( wtt_oauth_credentials_to_hash( $auth ) == wpt_get_user_verification( $auth ) );
 		if ( !$return && $context != 'verify' ) {
 			return ( wtt_oauth_credentials_to_hash() == get_option('wtt_oauth_hash') );
 		} else {
@@ -12,6 +12,16 @@ function wtt_oauth_test( $auth=false, $context='' ) {
 		}
 	}
 }
+
+function wpt_get_user_verification( $auth ) {
+	if ( get_option( 'jd_individual_twitter_users' ) != 1 ) { 
+		return false; 
+	} else {
+		$auth = get_user_meta( $auth,'wtt_oauth_hash',true );
+	}
+	return false;
+}
+
 // function to make connection
 function wtt_oauth_connection( $auth=false ) {
 if ( !$auth ) {

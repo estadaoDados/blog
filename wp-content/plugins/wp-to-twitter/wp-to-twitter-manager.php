@@ -219,7 +219,7 @@ function wpt_update_settings() {
 		update_option( 'use_dynamic_analytics',( isset( $_POST['use-dynamic-analytics'] ) )?$_POST['use-dynamic-analytics']:0 );		
 		update_option( 'use-twitter-analytics', ( isset( $_POST['use-twitter-analytics'] ) )?$_POST['use-twitter-analytics']:0 );
 		update_option( 'twitter-analytics-campaign', $_POST['twitter-analytics-campaign'] );
-		update_option( 'jd_individual_twitter_users', $_POST['jd_individual_twitter_users'] );
+		update_option( 'jd_individual_twitter_users', ( isset( $_POST['jd_individual_twitter_users']  )? $_POST['jd_individual_twitter_users']:0 ) );
 		$wtt_user_permissions = $_POST['wtt_user_permissions'];
 		$prev = get_option('wtt_user_permissions');
 		if ( $wtt_user_permissions != $prev ) {
