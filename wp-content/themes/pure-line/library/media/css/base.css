@@ -29,7 +29,7 @@ body, input, textarea { font: 13px/1.5 "PT Sans",serif; }
 .entry-header {clear:both;margin:0 0 5px 0;padding:0;}
 .entry-header a {color:#555;}
 .entry-header .comment-count a {color:#777;font-weight:bold;}
-.entry-footer {font-size:13px;clear:both;margin:10px 0;text-align:center;padding:10px;background: none repeat scroll 0 0 rgba(0, 0, 0, 0.1);-moz-border-radius: 50px;-webkit-border-radius: 50px;-border-radius: 50px;border-radius: 50px;}
+.entry-footer {font-size:13px;clear:both;margin:10px 0;text-align:center;padding:10px;background: none repeat scroll 0 0 rgba(165, 199, 223, 0.6);-moz-border-radius: 50px;-webkit-border-radius: 50px;-border-radius: 50px;border-radius: 50px;}
 .entry-footer a {color:#6D6D6D;}
 .entry-footer a:hover {text-decoration:none;border-bottom-color:#333;color:#222;font-size:16px;}
 .edit-post, .edit-comment, .edit-page {visibility:hidden;}
