@@ -52,6 +52,10 @@ Contributions by [Thor Erik](http://www.thorerik.net), Bill Berry and [Andrea Ba
 
 == Changelog ==
 
+= 2.5.7 =
+
+* Minor fixes for stupid mistakes. I apologize for the inconvenience.
+
 = 2.5.6 =
 
 * Various fixes related to WP Tweets PRO updates.
@@ -765,4 +769,4 @@ Writing and maintaining a plug-in is a lot of work. You can help me by providing
 
 == Upgrade Notice ==
 
-* 2.5.6 Changes in 2.5.6 only effect people using the WP Tweets PRO upgrade.
+* 2.5.7 Changes in 2.5.6 only effect people using the WP Tweets PRO upgrade.

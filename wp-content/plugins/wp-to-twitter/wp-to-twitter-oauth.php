@@ -14,10 +14,11 @@ function wtt_oauth_test( $auth=false, $context='' ) {
 }
 
 function wpt_get_user_verification( $auth ) {
-	if ( get_option( 'jd_individual_twitter_users' ) != 1 ) { 
+	if ( get_option( 'jd_individual_twitter_users' ) != '1' ) {
 		return false; 
 	} else {
 		$auth = get_user_meta( $auth,'wtt_oauth_hash',true );
+		return $auth;
 	}
 	return false;
 }

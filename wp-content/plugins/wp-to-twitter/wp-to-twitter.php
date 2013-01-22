@@ -3,7 +3,7 @@
 Plugin Name: WP to Twitter
 Plugin URI: http://www.joedolson.com/articles/wp-to-twitter/
 Description: Posts a Tweet when you update your WordPress blog or post to your blogroll, using your chosen URL shortening service. Rich in features for customizing and promoting your Tweets.
-Version: 2.5.6
+Version: 2.5.7
 Author: Joseph Dolson
 Author URI: http://www.joedolson.com/
 */
@@ -52,7 +52,7 @@ require_once( plugin_dir_path(__FILE__).'/wp-to-twitter-manager.php' );
 require_once( plugin_dir_path(__FILE__).'/functions.php' );
 
 global $wpt_version,$jd_plugin_url;
-$wpt_version = "2.5.6";
+$wpt_version = "2.5.7";
 $plugin_dir = basename(dirname(__FILE__));
 load_plugin_textdomain( 'wp-to-twitter', false, dirname( plugin_basename( __FILE__ ) ) . '/lang' );
 
@@ -434,13 +434,11 @@ function jd_truncate_tweet( $sentence, $postinfo, $post_ID, $retweet=false, $ref
 		}
 	}
 	if ( get_user_meta( $auth, 'wpt-remove', true ) == 'on' ) { $account = ''; }
-	if ( !$retweet ) {	
-		if ( get_option( 'jd_twit_prepend' ) != "" && $sentence != '' ) {
-			$sentence = stripslashes(get_option( 'jd_twit_prepend' )) . " " . $sentence;
-		}
-		if ( get_option( 'jd_twit_append' ) != "" && $sentence != '' ) {
-			$sentence = $sentence . " " . stripslashes(get_option( 'jd_twit_append' ));
-		}
+	if ( get_option( 'jd_twit_prepend' ) != "" && $sentence != '' ) {
+		$sentence = stripslashes(get_option( 'jd_twit_prepend' )) . " " . $sentence;
+	}
+	if ( get_option( 'jd_twit_append' ) != "" && $sentence != '' ) {
+		$sentence = $sentence . " " . stripslashes(get_option( 'jd_twit_append' ));
 	}
 	$encoding = get_option('blog_charset');
 
@@ -777,7 +775,7 @@ function jd_twit( $post_ID, $type='instant' ) {
 					if ( function_exists( 'wpt_pro_exists' ) && wpt_pro_exists() == true ) {
 						$user = get_userdata( $auth );
 						$auth_verified = wtt_oauth_test( $auth,'verify' );
-						$auth = ( get_option( 'jd_individual_twitter_users' ) != 1 )?false:$auth;
+						$auth = ( get_option( 'jd_individual_twitter_users' ) != 1 || !$auth_verified )?false:$auth;
 						if ( $post_info['wpt_delay_tweet'] == 0 || $post_info['wpt_delay_tweet'] == '' || $post_info['wpt_no_delay'] == 'on' ) {
 							$tweet = jd_doTwitterAPIPost( $sentence, $auth, $post_ID );
 							if ( $post_info['wpt_cotweet'] == 1 && $auth_verified ) {
