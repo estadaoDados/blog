@@ -1,6 +1,7 @@
-#barraEstadaoParceiros{width:980px; height:27px; background:none !important; display:table; margin:0px auto; margin-bottom:5px; }
+#barraEstadaoParceiros{width:980px; height:27px; background:none !important; display:table; margin:10px auto; margin-bottom:0px; }
+#containerEstadaoParceiros{width:100%; height:27px; background-color: rgba(206,222,236,0.48); display:table; margin:0px auto; margin-bottom:5px; }
 #barraEstadaoParceiros ul{margin:0;padding:0;}
-.lgBarraEstadaoParceiros{float:left; margin-right:20px}
+.lgBarraEstadaoParceiros{float:left; padding-right:20px; margin:-8px;}
 .lstBarraEstadaoParceiros{margin:0px; padding:0px; list-style:none; float:right; margin-right:10px; height:27px; line-height:27px;}
 .itemBarraEstadaoParceiros{display:block; float:left; color:#717070; font:11px Arial, Helvetica, sans-serif bold; height:27px; line-height:27px; padding:0 6x 0 0;}
 .itemBarraEstadaoParceiros a{

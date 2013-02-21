@@ -182,7 +182,7 @@ p, pre, ul, ol, dl, dd, blockquote, address, table, fieldset, form, .gallery-row
 .nav li ul.sub-menu li:first-child > a, .nav ul ul.sub-menu li:first-child > a {word-wrap:break-word;border-top:none;}
 .nav li ul.sub-menu li:last-child > a, .nav ul ul.sub-menu li:last-child a {border-bottom:none;}
 .nav ul li a:hover { }
-.nav li a {padding:13px; }
+.nav li a {padding:13px; font: 13px Arial, Helvetica, sans-serif bold; text-transform: uppercase;}
 .nav li:hover ul,
 .nav li.nav-hover ul { background: #f0f0f0; }
 
@@ -193,7 +193,7 @@ p, pre, ul, ol, dl, dd, blockquote, address, table, fieldset, form, .gallery-row
 .nav a { display: block; position: relative; padding: 8px 10px;color: #fff; text-shadow: none; font-size:1.2em;}
 .nav a:hover,.nav li.current_page_item a,.nav li.current_page_parent a,.nav li.current_page_ancestor a,
 .nav li.current-menu-item < a,.nav li.current-menu-parent < a, .nav li.current-menu-ancestor < a
- { text-decoration: none;}
+ { font:13px Arial, Helvetica, sans-serif bold; text-transform: uppercase;}
  
 .nav li.current-menu-item > a, .nav li.current-menu-ancestor > a {text-decoration: none;}
 
@@ -770,9 +770,10 @@ a.share-email:hover {background-position:0 -121px;}
   margin-bottom:0;
 }
 .menu .nav li a {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-style: italic;
-  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif bold; /*Georgia, "Times New Roman", Times, serif;*/
+  font-style: normal;
+  font-size: 13px;
+  text-transform: uppercase;
 }
 
 h3.fpg-title {
