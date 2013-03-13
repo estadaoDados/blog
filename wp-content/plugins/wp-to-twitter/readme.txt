@@ -3,7 +3,7 @@ Contributors: joedolson
 Donate link: http://www.joedolson.com/donate.php
 Tags: twitter, microblogging, su.pr, bitly, yourls, redirect, shortener, post, links
 Requires at least: 3.0.6
-Tested up to: 3.5
+Tested up to: 3.5.1
 License: GPLv2 or later
 Stable tag: trunk
 
@@ -51,6 +51,16 @@ Credits:
 Contributions by [Thor Erik](http://www.thorerik.net), Bill Berry and [Andrea Baccega](http://www.andreabaccega.com).  Some code previously contributed is no longer in this plug-in. Other bug fixes and related citations can be found in the changelog.
 
 == Changelog ==
+
+= 2.5.9 =
+
+* Using tag slug instead of tag name is a problem for languages with characters outside of [RFC 1738](http://www.faqs.org/rfcs/rfc1738.html) URL specs. Transformed into selectable option, default off.
+
+= 2.5.8 =
+
+* WP to Twitter now uses tag slug instead of tag name to convert tags into hashtags. Allows you to customize the hashtag sent for each tag.
+* Set up changes necessary for pending t.co URL length change on 2/20/2013. [Blog post](https://dev.twitter.com/blog/upcoming-tco-changes)
+* Updated: Danish, French, German translations.
 
 = 2.5.7 =
 

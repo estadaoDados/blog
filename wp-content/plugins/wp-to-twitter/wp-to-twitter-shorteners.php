@@ -7,7 +7,7 @@ add_filter( 'wptt_shorten_link','jd_shorten_link', 10, 4 );
 
 function jd_shorten_link( $thispostlink, $thisposttitle, $post_ID, $testmode=false ) {
 	if ( WPT_DEBUG && function_exists( 'wpt_pro_exists' ) ) {
-		wp_mail( 'debug@joedolson.com',"Initial Link Data: #$post_ID","$thispostlink, $thisposttitle, $post_ID, $testmode" ); // DEBUG
+		wp_mail( WPT_DEBUG_ADDRESS,"Initial Link Data: #$post_ID","$thispostlink, $thisposttitle, $post_ID, $testmode" ); // DEBUG
 	}
 		// filter link before sending to shortener or adding analytics
 		$thispostlink = apply_filters('wpt_shorten_link',$thispostlink,$post_ID );

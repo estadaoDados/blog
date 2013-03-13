@@ -223,7 +223,7 @@ function wtt_option_selected($field,$value,$type='checkbox') {
 function wpt_date_compare($early,$late) {
 	$firstdate = strtotime($early);
 	$lastdate = strtotime($late);
-	if ($early <= $late ) { // if post_modified is before or equal to post_date
+	if ($firstdate <= $lastdate ) { // if post_modified is before or equal to post_date
 		return 1;
 	} else {
 		return 0;

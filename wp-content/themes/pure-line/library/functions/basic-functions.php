@@ -162,7 +162,7 @@ if ($matchby) {
 
 	$my_query = new wp_query($args);
 	if( $my_query->have_posts() ) {
-_e( '<div class="similar-posts"><h5>Similar posts</h5><ul>', 'pure-line' );
+    _e('<div style=\"padding:5px;margin-bottom:40px;\"><h5 style=\"font-style:italic;\">Similar posts</h5><ul style=\"margin-bottom:0px;\">');
 		while ($my_query->have_posts()) {
 			$my_query->the_post();
 		?>

@@ -105,7 +105,7 @@ switch ( $post['oauth_settings'] ) {
 						delete_option( 'wpt_curl_error' );
 					} else if ( $connection->http_code == 0 ) {
 						$error_information = __("WP to Twitter was unable to establish a connection to Twitter.",'wp-to-twitter'); 
-						update_option( 'wpt_curl_error',$error_information );
+						update_option( 'wpt_curl_error',"$error_information" );
 					} else {
 						$error_information = array("http_code"=>$connection->http_code,"status"=>$connection->http_header['status']);
 						$error_code = __("Twitter response: http_code $error_information[http_code] - $error_information[status]",'wp-to-twitter');

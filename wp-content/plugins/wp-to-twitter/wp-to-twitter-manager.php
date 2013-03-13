@@ -30,7 +30,6 @@ function jd_check_functions() {
 	$shortener = get_option( 'jd_shortener' );
 	$title = urlencode( 'Your blog home' );
 	$shrink = apply_filters( 'wptt_shorten_link', $testurl, $title, false, true );
-	$yourls_URL = "";
 	if ($shrink == FALSE) {
 		if ($shortener == 1) {
 			$error = htmlentities( get_option('wp_supr_error') );
@@ -212,6 +211,7 @@ function wpt_update_settings() {
 		update_option( 'jd_twit_append', $_POST['jd_twit_append'] );
 		update_option( 'jd_post_excerpt', $_POST['jd_post_excerpt'] );	
 		update_option( 'jd_max_tags',$_POST['jd_max_tags']);
+		update_option( 'wpt_tag_source', ( ( $_POST['wpt_tag_source'] == 'slug' )?'slug':'' ) );
 		update_option( 'jd_max_characters',$_POST['jd_max_characters']);	
 		update_option( 'jd_replace_character',$_POST['jd_replace_character']);
 		update_option( 'jd_date_format',$_POST['jd_date_format'] );	
@@ -710,8 +710,11 @@ function wpt_update_settings() {
 			<p>
 				 <input type="checkbox" name="jd_strip_nonan" id="jd_strip_nonan" value="1" <?php echo jd_checkCheckbox('jd_strip_nonan'); ?> /> <label for="jd_strip_nonan"><?php _e("Strip nonalphanumeric characters from tags",'wp-to-twitter'); ?></label><br />
 				<label for="jd_replace_character"><?php _e("Spaces in tags replaced with:",'wp-to-twitter'); ?></label> <input type="text" name="jd_replace_character" id="jd_replace_character" value="<?php echo esc_attr( get_option('jd_replace_character') ); ?>" size="3" /><br />
-				
 				<small><?php _e("Default replacement is an underscore (<code>_</code>). Use <code>[ ]</code> to remove spaces entirely.",'wp-to-twitter'); ?></small>					
+			</p>
+			<p>
+			<input type="checkbox" name="wpt_tag_source" id="wpt_tag_source" value="slug" <?php echo jd_checkSelect( 'wpt_tag_source', 'slug', 'checkbox' ); ?> /> <label for="wpt_tag_source"><?php _e("Use tag slug as hashtag value",'wp-to-twitter'); ?></label><br />
+
 			</p>
 			<p>
 			<label for="jd_max_tags"><?php _e("Maximum number of tags to include:",'wp-to-twitter'); ?></label> <input type="text" name="jd_max_tags" id="jd_max_tags" value="<?php echo esc_attr( get_option('jd_max_tags') ); ?>" size="3" />
@@ -925,7 +928,7 @@ function wpt_sidebar() {
 			<?php } ?>
 			<div class="inside resources">
 			<p>
-			<a href="https://twitter.com/intent/tweet?screen_name=joedolson&text=WP%20to%20Twitter" class="twitter-mention-button" data-size="large" data-related="joedolson">Tweet to @joedolson</a>
+			<a href="https://twitter.com/intent/tweet?screen_name=joedolson&text=WP%20to%20Twitter%20is%great!" class="twitter-mention-button" data-size="large" data-related="joedolson">Tweet to @joedolson</a>
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 			</p>
 			<ul>

@@ -12,11 +12,9 @@ global $seedprod_comingsoon;
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title><?php
     bloginfo( 'name' );
-    $site_description = get_bloginfo( 'description', 'display' );
-    if ( $site_description  )
-      echo " | $site_description";
+    $site_description = get_bloginfo( 'description' );
     ?></title>
-  <meta name="description" content="">
+  <meta name="description" content="<?php echo esc_attr($site_description);?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <?php if(substr($sc_jdt['comingsoon_body_font'], 0, 1) != '_'): ?>
   <link href='http://fonts.googleapis.com/css?family=<?php echo $sc_jdt['comingsoon_body_font'] ?>&v1' rel='stylesheet' type='text/css'>
