@@ -71,7 +71,22 @@
 					"aoColumnDefs": [ {
 						"sType": "formatted-num",
 						"aTargets": [1,2,3,4,5]
-					} ]
+					} ],
+    "aLengthMenu": [[5, 10, 15, -1], [5, 10, 15, "All"]],
+    "oLanguage": {
+      "sLengthMenu": "Mostrar _MENU_ países por página",
+      "sZeroRecords": "Nenhum país encontrado",
+      "sInfo": "Exibindo _START_ a _END_ de _TOTAL_ países",
+      "sInfoEmpty": "Exibindo 0 a 0 de 0 países",
+      "sInfoFiltered": "(filtrado de _MAX_ países)",
+      "sSearch": "Busca:",
+      "oPaginate": {
+        "sNext": "Próxima",
+        "sFirst": "Primeira",
+        "sLast": "Última",
+        "sPrevious": "Anterior"
+      }
+    }  			
 				} );
         oTable.fnSort( [ [1,'desc'] ] );
 			} );
