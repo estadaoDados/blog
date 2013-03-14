@@ -1,0 +1,1972 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico" />
+		
+		<title>DataTables example</title>
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css">
+		<link rel="stylesheet" type="text/css" href="complete.css">
+		
+		<script type="text/javascript" language="javascript" src="jquery.js"></script>
+    <script type="text/javascript" language="javascript" src="jquery.dataTables.min.js"></script>
+		<script type="text/javascript" charset="utf-8">
+      /* Formatted numbers sorting */
+
+      function moduloMaiorQueZero(valor) {
+        if (valor.search("^0,") != -1 ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      function contemDecimal(valor) {
+        if (valor.search(",") != -1 ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      function parseDecimal(valor) {
+        decimal = valor.split(",")[1];
+        if (decimal < 10) {
+          return parseFloat(decimal * 100);
+        } else if (decimal < 100) {
+          return parseFloat(decimal * 10);
+        } else {
+          return parseFloat(decimal);
+        }
+      }
+
+      function parseando(valor){
+        if (contemDecimal(valor)) { // numero contém decimal
+          if (moduloMaiorQueZero(valor)) { // módulo do número maior que zero
+            return parseDecimal(valor);
+          } else { // 
+            return ( parseFloat( valor.split(",")[0] ) + parseDecimal(valor)/1000 );
+          } 
+        } else { // módulo do número maior que zero
+          return parseFloat ( valor );
+        }
+      }
+
+      $.fn.dataTableExt.oSort['formatted-num-asc'] = function(x,y){
+	 			x = parseando(x);
+	 			y = parseando(y);
+				return x - y;
+      }
+
+			$.fn.dataTableExt.oSort['formatted-num-desc'] = function(x,y){
+	 			x = parseando(x);
+	 			y = parseando(y);
+				return y - x;
+			}
+			
+			/* Initialisation */
+			$(document).ready(function() {
+				var oTable = $('#example').dataTable( {
+          "sPaginationType": "full_numbers",
+					"aoColumnDefs": [ {
+						"sType": "formatted-num",
+						"aTargets": [1,2,3,4,5]
+					} ]
+				} );
+        oTable.fnSort( [ [1,'desc'] ] );
+			} );
+		</script>
+	</head>
+	<body id="dt_example">
+		<div id="container">
+
+<table id="example" border="0" cellpadding="0" cellspacing="0" class="pretty">
+	<thead>
+		<tr>
+      <th>País</th>
+      <th>Índice de Desenvolvimento Humano (IDH)</th>
+      <th>Expectativa de vida</th>
+      <th>Média de anos de estudo</th>
+      <th>Anos esperados de escolaridade</th>
+      <th>Renda nacional bruta per capita ($ PPC)</th>
+      <th>Renda nacional bruta per capita menos o ranking do IDH</th>
+      <th>IDH sem indicadores de renda</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr>
+<th scope="row">Noruega</th>
+<th>0,955</th>
+<th>81,3</th>
+<th>12,6</th>
+<th>17,5</th>
+<th>48688</th>
+<th>4</th>
+<th>0,977</th>
+</tr>
+<tr>
+<th scope="row">Austrália</th>
+<th>0,938</th>
+<th>82</th>
+<th>12</th>
+<th>19,6</th>
+<th>34340</th>
+<th>15</th>
+<th>0,978</th>
+</tr>
+<tr>
+<th scope="row">Estados Unidos</th>
+<th>0,937</th>
+<th>78,7</th>
+<th>13,3</th>
+<th>16,8</th>
+<th>43480</th>
+<th>6</th>
+<th>0,958</th>
+</tr>
+<tr>
+<th scope="row">Países Baixos</th>
+<th>0,921</th>
+<th>80,8</th>
+<th>11,6</th>
+<th>16,9</th>
+<th>37282</th>
+<th>8</th>
+<th>0,945</th>
+</tr>
+<tr>
+<th scope="row">Alemanha</th>
+<th>0,92</th>
+<th>80,6</th>
+<th>12,2</th>
+<th>16,4</th>
+<th>35431</th>
+<th>10</th>
+<th>0,948</th>
+</tr>
+<tr>
+<th scope="row">Nova Zelândia</th>
+<th>0,919</th>
+<th>80,8</th>
+<th>12,5</th>
+<th>19,7</th>
+<th>24358</th>
+<th>26</th>
+<th>0,978</th>
+</tr>
+<tr>
+<th scope="row">Irlanda</th>
+<th>0,916</th>
+<th>80,7</th>
+<th>11,6</th>
+<th>18,3</th>
+<th>28671</th>
+<th>19</th>
+<th>0,96</th>
+</tr>
+<tr>
+<th scope="row">Suécia</th>
+<th>0,916</th>
+<th>81,6</th>
+<th>11,7</th>
+<th>16</th>
+<th>36143</th>
+<th>6</th>
+<th>0,94</th>
+</tr>
+<tr>
+<th scope="row">Suíça</th>
+<th>0,913</th>
+<th>82,5</th>
+<th>11</th>
+<th>15,7</th>
+<th>40527</th>
+<th>2</th>
+<th>0,926</th>
+</tr>
+<tr>
+<th scope="row">Japão</th>
+<th>0,912</th>
+<th>83,6</th>
+<th>11,6</th>
+<th>15,3</th>
+<th>32545</th>
+<th>11</th>
+<th>0,942</th>
+</tr>
+<tr>
+<th scope="row">Canadá</th>
+<th>0,911</th>
+<th>81,1</th>
+<th>12,3</th>
+<th>15,1</th>
+<th>35369</th>
+<th>5</th>
+<th>0,934</th>
+</tr>
+<tr>
+<th scope="row">Coreia</th>
+<th>0,909</th>
+<th>80,7</th>
+<th>11,6</th>
+<th>17,2</th>
+<th>28231</th>
+<th>15</th>
+<th>0,949</th>
+</tr>
+<tr>
+<th scope="row">Islândia</th>
+<th>0,906</th>
+<th>83</th>
+<th>10</th>
+<th>15,5</th>
+<th>45598</th>
+<th>-6</th>
+<th>0,907</th>
+</tr>
+<tr>
+<th scope="row">Hong Kong</th>
+<th>0,906</th>
+<th>81,9</th>
+<th>10,4</th>
+<th>18,3</th>
+<th>29176</th>
+<th>12</th>
+<th>0,943</th>
+</tr>
+<tr>
+<th scope="row">Dinamarca</th>
+<th>0,901</th>
+<th>79</th>
+<th>11,4</th>
+<th>16,8</th>
+<th>33518</th>
+<th>4</th>
+<th>0,924</th>
+</tr>
+<tr>
+<th scope="row">Israel</th>
+<th>0,9</th>
+<th>81,9</th>
+<th>11,9</th>
+<th>15,7</th>
+<th>26224</th>
+<th>13</th>
+<th>0,942</th>
+</tr>
+<tr>
+<th scope="row">Bélgica</th>
+<th>0,897</th>
+<th>80</th>
+<th>10,9</th>
+<th>16,4</th>
+<th>33429</th>
+<th>3</th>
+<th>0,917</th>
+</tr>
+<tr>
+<th scope="row">Áustria</th>
+<th>0,895</th>
+<th>81</th>
+<th>10,8</th>
+<th>15,3</th>
+<th>36438</th>
+<th>-5</th>
+<th>0,908</th>
+</tr>
+<tr>
+<th scope="row">Cingapura</th>
+<th>0,895</th>
+<th>81,2</th>
+<th>10,1</th>
+<th>14,4</th>
+<th>52613</th>
+<th>-15</th>
+<th>0,88</th>
+</tr>
+<tr>
+<th scope="row">França</th>
+<th>0,893</th>
+<th>81,7</th>
+<th>10,6</th>
+<th>16,1</th>
+<th>30277</th>
+<th>4</th>
+<th>0,919</th>
+</tr>
+<tr>
+<th scope="row">Finlândia</th>
+<th>0,892</th>
+<th>80,1</th>
+<th>10,3</th>
+<th>16,9</th>
+<th>32510</th>
+<th>2</th>
+<th>0,912</th>
+</tr>
+<tr>
+<th scope="row">Eslovênia</th>
+<th>0,892</th>
+<th>79,5</th>
+<th>11,7</th>
+<th>16,9</th>
+<th>23999</th>
+<th>12</th>
+<th>0,936</th>
+</tr>
+<tr>
+<th scope="row">Espanha</th>
+<th>0,885</th>
+<th>81,6</th>
+<th>10,4</th>
+<th>16,4</th>
+<th>25947</th>
+<th>8</th>
+<th>0,919</th>
+</tr>
+<tr>
+<th scope="row">Liechtenstein</th>
+<th>0,883</th>
+<th>79,8</th>
+<th>10,3</th>
+<th>11,9</th>
+<th>84880</th>
+<th>-22</th>
+<th>0,832</th>
+</tr>
+<tr>
+<th scope="row">Itália</th>
+<th>0,881</th>
+<th>82</th>
+<th>10,1</th>
+<th>16,2</th>
+<th>26158</th>
+<th>5</th>
+<th>0,911</th>
+</tr>
+<tr>
+<th scope="row">Luxemburgo</th>
+<th>0,875</th>
+<th>80,1</th>
+<th>10,1</th>
+<th>13,5</th>
+<th>48285</th>
+<th>-20</th>
+<th>0,858</th>
+</tr>
+<tr>
+<th scope="row">Reino Unido</th>
+<th>0,875</th>
+<th>80,3</th>
+<th>9,4</th>
+<th>16,4</th>
+<th>32538</th>
+<th>-5</th>
+<th>0,886</th>
+</tr>
+<tr>
+<th scope="row">República Tcheca</th>
+<th>0,873</th>
+<th>77,8</th>
+<th>12,3</th>
+<th>15,3</th>
+<th>22067</th>
+<th>10</th>
+<th>0,913</th>
+</tr>
+<tr>
+<th scope="row">Grécia</th>
+<th>0,86</th>
+<th>80</th>
+<th>10,1</th>
+<th>16,3</th>
+<th>20511</th>
+<th>13</th>
+<th>0,899</th>
+</tr>
+<tr>
+<th scope="row">Brunei</th>
+<th>0,855</th>
+<th>78,1</th>
+<th>8,6</th>
+<th>15</th>
+<th>45690</th>
+<th>-23</th>
+<th>0,832</th>
+</tr>
+<tr>
+<th scope="row">Chipre</th>
+<th>0,848</th>
+<th>79,8</th>
+<th>9,8</th>
+<th>14,9</th>
+<th>23825</th>
+<th>4</th>
+<th>0,869</th>
+</tr>
+<tr>
+<th scope="row">Malta</th>
+<th>0,847</th>
+<th>79,8</th>
+<th>9,9</th>
+<th>15,1</th>
+<th>21184</th>
+<th>9</th>
+<th>0,876</th>
+</tr>
+<tr>
+<th scope="row">Andorra</th>
+<th>0,846</th>
+<th>81,1</th>
+<th>10,4</th>
+<th>11,7</th>
+<th>33918</th>
+<th>-15</th>
+<th>0,839</th>
+</tr>
+<tr>
+<th scope="row">Estônia</th>
+<th>0,846</th>
+<th>75</th>
+<th>12</th>
+<th>15,8</th>
+<th>17402</th>
+<th>13</th>
+<th>0,892</th>
+</tr>
+<tr>
+<th scope="row">Eslováquia</th>
+<th>0,84</th>
+<th>75,6</th>
+<th>11,6</th>
+<th>14,7</th>
+<th>19696</th>
+<th>9</th>
+<th>0,872</th>
+</tr>
+<tr>
+<th scope="row">Quatar</th>
+<th>0,834</th>
+<th>78,5</th>
+<th>7,3</th>
+<th>12,2</th>
+<th>87478</th>
+<th>-35</th>
+<th>0,761</th>
+</tr>
+<tr>
+<th scope="row">Hungria</th>
+<th>0,831</th>
+<th>74,6</th>
+<th>11,7</th>
+<th>15,3</th>
+<th>16088</th>
+<th>13</th>
+<th>0,874</th>
+</tr>
+<tr>
+<th scope="row">Barbados</th>
+<th>0,825</th>
+<th>77</th>
+<th>9,3</th>
+<th>16,3</th>
+<th>17308</th>
+<th>10</th>
+<th>0,859</th>
+</tr>
+<tr>
+<th scope="row">Polônia</th>
+<th>0,821</th>
+<th>76,3</th>
+<th>10</th>
+<th>15,2</th>
+<th>17776</th>
+<th>7</th>
+<th>0,851</th>
+</tr>
+<tr>
+<th scope="row">Chile</th>
+<th>0,819</th>
+<th>79,3</th>
+<th>9,7</th>
+<th>14,7</th>
+<th>14987</th>
+<th>13</th>
+<th>0,863</th>
+</tr>
+<tr>
+<th scope="row">Emirados Árabes Unidos</th>
+<th>0,818</th>
+<th>72,5</th>
+<th>10,9</th>
+<th>15,7</th>
+<th>16858</th>
+<th>7</th>
+<th>0,85</th>
+</tr>
+<tr>
+<th scope="row">Lituânia</th>
+<th>0,818</th>
+<th>76,7</th>
+<th>8,9</th>
+<th>12</th>
+<th>42716</th>
+<th>-31</th>
+<th>0,783</th>
+</tr>
+<tr>
+<th scope="row">Portugal</th>
+<th>0,816</th>
+<th>79,7</th>
+<th>7,7</th>
+<th>16</th>
+<th>19907</th>
+<th>0</th>
+<th>0,835</th>
+</tr>
+<tr>
+<th scope="row">Letônia</th>
+<th>0,814</th>
+<th>73,6</th>
+<th>11,5</th>
+<th>14,8</th>
+<th>14724</th>
+<th>10</th>
+<th>0,856</th>
+</tr>
+<tr>
+<th scope="row">Argentina</th>
+<th>0,811</th>
+<th>76,1</th>
+<th>9,3</th>
+<th>16,1</th>
+<th>15347</th>
+<th>7</th>
+<th>0,848</th>
+</tr>
+<tr>
+<th scope="row">Seychelles</th>
+<th>0,806</th>
+<th>73,8</th>
+<th>9,4</th>
+<th>14,3</th>
+<th>22615</th>
+<th>-9</th>
+<th>0,808</th>
+</tr>
+<tr>
+<th scope="row">Croácia</th>
+<th>0,805</th>
+<th>76,8</th>
+<th>9,8</th>
+<th>14,1</th>
+<th>15419</th>
+<th>4</th>
+<th>0,837</th>
+</tr>
+<tr>
+<th scope="row">Barein</th>
+<th>0,796</th>
+<th>75,2</th>
+<th>9,4</th>
+<th>13,4</th>
+<th>19154</th>
+<th>-3</th>
+<th>0,806</th>
+</tr>
+<tr>
+<th scope="row">Bahamas</th>
+<th>0,794</th>
+<th>75,9</th>
+<th>8,5</th>
+<th>12,6</th>
+<th>27401</th>
+<th>-21</th>
+<th>0,777</th>
+</tr>
+<tr>
+<th scope="row">Bielorrússia</th>
+<th>0,793</th>
+<th>70,6</th>
+<th>11,5</th>
+<th>14,7</th>
+<th>13385</th>
+<th>11</th>
+<th>0,83</th>
+</tr>
+<tr>
+<th scope="row">Uruguai</th>
+<th>0,792</th>
+<th>77,2</th>
+<th>8,5</th>
+<th>15,5</th>
+<th>13333</th>
+<th>11</th>
+<th>0,829</th>
+</tr>
+<tr>
+<th scope="row">Montenegro</th>
+<th>0,791</th>
+<th>74,8</th>
+<th>10,5</th>
+<th>15</th>
+<th>10471</th>
+<th>24</th>
+<th>0,85</th>
+</tr>
+<tr>
+<th scope="row">Palau</th>
+<th>0,791</th>
+<th>72,1</th>
+<th>12,2</th>
+<th>13,7</th>
+<th>11463</th>
+<th>18</th>
+<th>0,84</th>
+</tr>
+<tr>
+<th scope="row">Kuwait</th>
+<th>0,79</th>
+<th>74,7</th>
+<th>6,1</th>
+<th>14,2</th>
+<th>52793</th>
+<th>-51</th>
+<th>0,73</th>
+</tr>
+<tr>
+<th scope="row">Rússia</th>
+<th>0,788</th>
+<th>69,1</th>
+<th>11,7</th>
+<th>14,3</th>
+<th>14461</th>
+<th>0</th>
+<th>0,816</th>
+</tr>
+<tr>
+<th scope="row">Romênia</th>
+<th>0,786</th>
+<th>74,2</th>
+<th>10,4</th>
+<th>14,5</th>
+<th>11011</th>
+<th>16</th>
+<th>0,836</th>
+</tr>
+<tr>
+<th scope="row">Bulgária</th>
+<th>0,782</th>
+<th>73,6</th>
+<th>10,6</th>
+<th>14</th>
+<th>11474</th>
+<th>12</th>
+<th>0,826</th>
+</tr>
+<tr>
+<th scope="row">Arábia Saudita</th>
+<th>0,782</th>
+<th>74,1</th>
+<th>7,8</th>
+<th>14,3</th>
+<th>22616</th>
+<th>-21</th>
+<th>0,774</th>
+</tr>
+<tr>
+<th scope="row">Cuba</th>
+<th>0,78</th>
+<th>79,3</th>
+<th>10,2</th>
+<th>16,2</th>
+<th>5539</th>
+<th>44</th>
+<th>0,894</th>
+</tr>
+<tr>
+<th scope="row">Panamá</th>
+<th>0,78</th>
+<th>76,3</th>
+<th>9,4</th>
+<th>13,2</th>
+<th>13519</th>
+<th>1</th>
+<th>0,81</th>
+</tr>
+<tr>
+<th scope="row">México</th>
+<th>0,775</th>
+<th>77,1</th>
+<th>8,5</th>
+<th>13,7</th>
+<th>12947</th>
+<th>4</th>
+<th>0,805</th>
+</tr>
+<tr>
+<th scope="row">Costa Rica</th>
+<th>0,773</th>
+<th>79,4</th>
+<th>8,4</th>
+<th>13,7</th>
+<th>10863</th>
+<th>12</th>
+<th>0,816</th>
+</tr>
+<tr>
+<th scope="row">Granada</th>
+<th>0,77</th>
+<th>76,1</th>
+<th>8,6</th>
+<th>15,8</th>
+<th>9257</th>
+<th>21</th>
+<th>0,827</th>
+</tr>
+<tr>
+<th scope="row">Sérvia</th>
+<th>0,769</th>
+<th>75</th>
+<th>7,3</th>
+<th>16,2</th>
+<th>13765</th>
+<th>-8</th>
+<th>0,791</th>
+</tr>
+<tr>
+<th scope="row">Malásia</th>
+<th>0,769</th>
+<th>74,5</th>
+<th>9,5</th>
+<th>12,6</th>
+<th>13676</th>
+<th>-7</th>
+<th>0,791</th>
+</tr>
+<tr>
+<th scope="row">Líbia</th>
+<th>0,769</th>
+<th>74,7</th>
+<th>10,2</th>
+<th>13,6</th>
+<th>9533</th>
+<th>16</th>
+<th>0,823</th>
+</tr>
+<tr>
+<th scope="row">Antigua e Barbuda</th>
+<th>0,76</th>
+<th>72,8</th>
+<th>8,9</th>
+<th>13,3</th>
+<th>13883</th>
+<th>-12</th>
+<th>0,776</th>
+</tr>
+<tr>
+<th scope="row">Trinidad e Tobago</th>
+<th>0,76</th>
+<th>70,3</th>
+<th>9,2</th>
+<th>11,9</th>
+<th>21941</th>
+<th>-28</th>
+<th>0,743</th>
+</tr>
+<tr>
+<th scope="row">Cazaquistão</th>
+<th>0,754</th>
+<th>67,4</th>
+<th>10,4</th>
+<th>15,3</th>
+<th>10451</th>
+<th>8</th>
+<th>0,791</th>
+</tr>
+<tr>
+<th scope="row">Albânia</th>
+<th>0,749</th>
+<th>77,1</th>
+<th>10,4</th>
+<th>11,4</th>
+<th>7822</th>
+<th>21</th>
+<th>0,807</th>
+</tr>
+<tr>
+<th scope="row">Venezuela</th>
+<th>0,748</th>
+<th>74,6</th>
+<th>7,6</th>
+<th>14,4</th>
+<th>11475</th>
+<th>-2</th>
+<th>0,774</th>
+</tr>
+<tr>
+<th scope="row">São Cristóvão e Nevis</th>
+<th>0,745</th>
+<th>77,6</th>
+<th>7,7</th>
+<th>12,7</th>
+<th>10977</th>
+<th>-1</th>
+<th>0,771</th>
+</tr>
+<tr>
+<th scope="row">Dominica</th>
+<th>0,745</th>
+<th>73,9</th>
+<th>12,1</th>
+<th>13,2</th>
+<th>5005</th>
+<th>37</th>
+<th>0,845</th>
+</tr>
+<tr>
+<th scope="row">Líbano</th>
+<th>0,745</th>
+<th>72,8</th>
+<th>7,9</th>
+<th>13,9</th>
+<th>12364</th>
+<th>-5</th>
+<th>0,762</th>
+</tr>
+<tr>
+<th scope="row">Géorgia</th>
+<th>0,745</th>
+<th>73,3</th>
+<th>8,4</th>
+<th>12,9</th>
+<th>12460</th>
+<th>-5</th>
+<th>0,763</th>
+</tr>
+<tr>
+<th scope="row">Irã</th>
+<th>0,742</th>
+<th>73,2</th>
+<th>7,8</th>
+<th>14,4</th>
+<th>10695</th>
+<th>-1</th>
+<th>0,769</th>
+</tr>
+<tr>
+<th scope="row">Peru</th>
+<th>0,741</th>
+<th>74,2</th>
+<th>8,7</th>
+<th>13,2</th>
+<th>9306</th>
+<th>6</th>
+<th>0,78</th>
+</tr>
+<tr>
+<th scope="row">Macedônia</th>
+<th>0,74</th>
+<th>75</th>
+<th>8,2</th>
+<th>13,4</th>
+<th>9377</th>
+<th>2</th>
+<th>0,777</th>
+</tr>
+<tr>
+<th scope="row">Ucrânia</th>
+<th>0,74</th>
+<th>68,8</th>
+<th>11,3</th>
+<th>14,8</th>
+<th>6428</th>
+<th>22</th>
+<th>0,813</th>
+</tr>
+<tr>
+<th scope="row">Maurícios</th>
+<th>0,737</th>
+<th>73,5</th>
+<th>7,2</th>
+<th>13,6</th>
+<th>13300</th>
+<th>-17</th>
+<th>0,745</th>
+</tr>
+<tr>
+<th scope="row">Bósnia e Herzegovina</th>
+<th>0,735</th>
+<th>75,8</th>
+<th>8,3</th>
+<th>13,4</th>
+<th>7713</th>
+<th>13</th>
+<th>0,787</th>
+</tr>
+<tr>
+<th scope="row">Azerbaijão</th>
+<th>0,734</th>
+<th>70,9</th>
+<th>11,2</th>
+<th>11,7</th>
+<th>8153</th>
+<th>5</th>
+<th>0,78</th>
+</tr>
+<tr>
+<th scope="row">São Vicente e Granadinas</th>
+<th>0,733</th>
+<th>72,5</th>
+<th>8,6</th>
+<th>13,3</th>
+<th>9367</th>
+<th>-1</th>
+<th>0,767</th>
+</tr>
+<tr>
+<th scope="row">Omã</th>
+<th>0,731</th>
+<th>73,2</th>
+<th>5,5</th>
+<th>13,5</th>
+<th>24092</th>
+<th>-51</th>
+<th>0,694</th>
+</tr>
+<tr>
+<th scope="row">Jamaica</th>
+<th>0,73</th>
+<th>73,8</th>
+<th>7,2</th>
+<th>14,2</th>
+<th>10152</th>
+<th>-8</th>
+<th>0,755</th>
+</tr>
+<tr>
+<th scope="row">Brasil</th>
+<th>0,73</th>
+<th>73,3</th>
+<th>9,6</th>
+<th>13,1</th>
+<th>6701</th>
+<th>14</th>
+<th>0,792</th>
+</tr>
+<tr>
+<th scope="row">Armênia</th>
+<th>0,729</th>
+<th>74,4</th>
+<th>10,8</th>
+<th>12,2</th>
+<th>5540</th>
+<th>16</th>
+<th>0,808</th>
+</tr>
+<tr>
+<th scope="row">Santa Lúcia</th>
+<th>0,725</th>
+<th>74,8</th>
+<th>8,3</th>
+<th>12,7</th>
+<th>7971</th>
+<th>1</th>
+<th>0,768</th>
+</tr>
+<tr>
+<th scope="row">Equador</th>
+<th>0,724</th>
+<th>75,8</th>
+<th>7,6</th>
+<th>13,7</th>
+<th>7471</th>
+<th>7</th>
+<th>0,772</th>
+</tr>
+<tr>
+<th scope="row">Turquia</th>
+<th>0,722</th>
+<th>74,2</th>
+<th>6,5</th>
+<th>12,9</th>
+<th>13710</th>
+<th>-32</th>
+<th>0,72</th>
+</tr>
+<tr>
+<th scope="row">Colômbia</th>
+<th>0,719</th>
+<th>73,9</th>
+<th>7,3</th>
+<th>13,6</th>
+<th>8711</th>
+<th>-6</th>
+<th>0,751</th>
+</tr>
+<tr>
+<th scope="row">Sri Lanka</th>
+<th>0,715</th>
+<th>75,1</th>
+<th>9,3</th>
+<th>12,7</th>
+<th>5170</th>
+<th>18</th>
+<th>0,792</th>
+</tr>
+<tr>
+<th scope="row">Algéria</th>
+<th>0,713</th>
+<th>73,4</th>
+<th>7,6</th>
+<th>13,6</th>
+<th>7418</th>
+<th>4</th>
+<th>0,755</th>
+</tr>
+<tr>
+<th scope="row">Tunísia</th>
+<th>0,712</th>
+<th>74,7</th>
+<th>6,5</th>
+<th>14,5</th>
+<th>8103</th>
+<th>-6</th>
+<th>0,746</th>
+</tr>
+<tr>
+<th scope="row">Tonga</th>
+<th>0,71</th>
+<th>72,5</th>
+<th>10,3</th>
+<th>13,7</th>
+<th>4153</th>
+<th>26</th>
+<th>0,807</th>
+</tr>
+<tr>
+<th scope="row">Belize</th>
+<th>0,702</th>
+<th>76,3</th>
+<th>8</th>
+<th>12,5</th>
+<th>5327</th>
+<th>8</th>
+<th>0,767</th>
+</tr>
+<tr>
+<th scope="row">Samoa</th>
+<th>0,702</th>
+<th>73,6</th>
+<th>7,2</th>
+<th>12,3</th>
+<th>8506</th>
+<th>-11</th>
+<th>0,726</th>
+</tr>
+<tr>
+<th scope="row">República Dominicana</th>
+<th>0,702</th>
+<th>69,4</th>
+<th>10,7</th>
+<th>13,9</th>
+<th>4087</th>
+<th>24</th>
+<th>0,794</th>
+</tr>
+<tr>
+<th scope="row">Fiji</th>
+<th>0,702</th>
+<th>72,7</th>
+<th>10,3</th>
+<th>13</th>
+<th>3928</th>
+<th>28</th>
+<th>0,8</th>
+</tr>
+<tr>
+<th scope="row">Jordânia</th>
+<th>0,7</th>
+<th>73,5</th>
+<th>8,6</th>
+<th>12,7</th>
+<th>5272</th>
+<th>8</th>
+<th>0,766</th>
+</tr>
+<tr>
+<th scope="row">China</th>
+<th>0,699</th>
+<th>73,7</th>
+<th>7,5</th>
+<th>11,7</th>
+<th>7945</th>
+<th>-11</th>
+<th>0,728</th>
+</tr>
+<tr>
+<th scope="row">Turcomenistão</th>
+<th>0,698</th>
+<th>65,2</th>
+<th>9,9</th>
+<th>12,6</th>
+<th>7782</th>
+<th>-10</th>
+<th>0,727</th>
+</tr>
+<tr>
+<th scope="row">Tailândia</th>
+<th>0,69</th>
+<th>74,3</th>
+<th>6,6</th>
+<th>12,3</th>
+<th>7722</th>
+<th>-10</th>
+<th>0,715</th>
+</tr>
+<tr>
+<th scope="row">Maldivas</th>
+<th>0,688</th>
+<th>77,1</th>
+<th>5,8</th>
+<th>12,5</th>
+<th>7478</th>
+<th>-9</th>
+<th>0,715</th>
+</tr>
+<tr>
+<th scope="row">Suriname</th>
+<th>0,684</th>
+<th>70,8</th>
+<th>7,2</th>
+<th>12,4</th>
+<th>7327</th>
+<th>-7</th>
+<th>0,71</th>
+</tr>
+<tr>
+<th scope="row">Gabão</th>
+<th>0,683</th>
+<th>63,1</th>
+<th>7,5</th>
+<th>13</th>
+<th>12521</th>
+<th>-40</th>
+<th>0,668</th>
+</tr>
+<tr>
+<th scope="row">El Salvador</th>
+<th>0,68</th>
+<th>72,4</th>
+<th>7,5</th>
+<th>12</th>
+<th>5915</th>
+<th>-5</th>
+<th>0,723</th>
+</tr>
+<tr>
+<th scope="row">Bolívia</th>
+<th>0,675</th>
+<th>66,9</th>
+<th>9,2</th>
+<th>13,5</th>
+<th>4444</th>
+<th>7</th>
+<th>0,74</th>
+</tr>
+<tr>
+<th scope="row">Mongólia</th>
+<th>0,675</th>
+<th>68,8</th>
+<th>8,3</th>
+<th>14,3</th>
+<th>4245</th>
+<th>10</th>
+<th>0,746</th>
+</tr>
+<tr>
+<th scope="row">Palestina</th>
+<th>0,67</th>
+<th>73</th>
+<th>8</th>
+<th>13,5</th>
+<th>3359</th>
+<th>20</th>
+<th>0,761</th>
+</tr>
+<tr>
+<th scope="row">Paraguai</th>
+<th>0,669</th>
+<th>72,7</th>
+<th>7,7</th>
+<th>12,1</th>
+<th>4497</th>
+<th>4</th>
+<th>0,73</th>
+</tr>
+<tr>
+<th scope="row">Egito</th>
+<th>0,662</th>
+<th>73,5</th>
+<th>6,4</th>
+<th>12,1</th>
+<th>5401</th>
+<th>-6</th>
+<th>0,702</th>
+</tr>
+<tr>
+<th scope="row">Moldova</th>
+<th>0,66</th>
+<th>69,6</th>
+<th>9,7</th>
+<th>11,8</th>
+<th>3319</th>
+<th>19</th>
+<th>0,747</th>
+</tr>
+<tr>
+<th scope="row">Filipinas</th>
+<th>0,654</th>
+<th>69</th>
+<th>8,9</th>
+<th>11,7</th>
+<th>3752</th>
+<th>11</th>
+<th>0,724</th>
+</tr>
+<tr>
+<th scope="row">Uzbequistão</th>
+<th>0,654</th>
+<th>68,6</th>
+<th>10</th>
+<th>11,6</th>
+<th>3201</th>
+<th>19</th>
+<th>0,74</th>
+</tr>
+<tr>
+<th scope="row">Síria</th>
+<th>0,648</th>
+<th>76</th>
+<th>5,7</th>
+<th>11,7</th>
+<th>4674</th>
+<th>-2</th>
+<th>0,692</th>
+</tr>
+<tr>
+<th scope="row">Micronésia</th>
+<th>0,645</th>
+<th>69,2</th>
+<th>8,8</th>
+<th>11,4</th>
+<th>3352</th>
+<th>14</th>
+<th>0,719</th>
+</tr>
+<tr>
+<th scope="row">Guiana</th>
+<th>0,636</th>
+<th>70,2</th>
+<th>8,5</th>
+<th>10,3</th>
+<th>3387</th>
+<th>11</th>
+<th>0,703</th>
+</tr>
+<tr>
+<th scope="row">Botsuana</th>
+<th>0,634</th>
+<th>53</th>
+<th>8,9</th>
+<th>11,8</th>
+<th>13102</th>
+<th>-55</th>
+<th>0,596</th>
+</tr>
+<tr>
+<th scope="row">Honduras</th>
+<th>0,632</th>
+<th>73,4</th>
+<th>6,5</th>
+<th>11,4</th>
+<th>3426</th>
+<th>8</th>
+<th>0,695</th>
+</tr>
+<tr>
+<th scope="row">Kiribati</th>
+<th>0,629</th>
+<th>69,8</th>
+<th>5,8</th>
+<th>12,9</th>
+<th>4154</th>
+<th>-3</th>
+<th>0,672</th>
+</tr>
+<tr>
+<th scope="row">África do Sul</th>
+<th>0,629</th>
+<th>68,4</th>
+<th>7,8</th>
+<th>12</th>
+<th>3079</th>
+<th>13</th>
+<th>0,701</th>
+</tr>
+<tr>
+<th scope="row">Indonésia</th>
+<th>0,629</th>
+<th>53,4</th>
+<th>8,5</th>
+<th>13,1</th>
+<th>9594</th>
+<th>-42</th>
+<th>0,608</th>
+</tr>
+<tr>
+<th scope="row">Vanuatu</th>
+<th>0,626</th>
+<th>71,3</th>
+<th>6,7</th>
+<th>10,6</th>
+<th>3960</th>
+<th>-1</th>
+<th>0,672</th>
+</tr>
+<tr>
+<th scope="row">Quirguistão</th>
+<th>0,622</th>
+<th>68</th>
+<th>9,3</th>
+<th>12,6</th>
+<th>2009</th>
+<th>24</th>
+<th>0,738</th>
+</tr>
+<tr>
+<th scope="row">Tajiquistão</th>
+<th>0,622</th>
+<th>67,8</th>
+<th>9,8</th>
+<th>11,5</th>
+<th>2119</th>
+<th>19</th>
+<th>0,731</th>
+</tr>
+<tr>
+<th scope="row">Vietnã</th>
+<th>0,617</th>
+<th>75,4</th>
+<th>5,5</th>
+<th>11,9</th>
+<th>2970</th>
+<th>9</th>
+<th>0,686</th>
+</tr>
+<tr>
+<th scope="row">Namíbia</th>
+<th>0,608</th>
+<th>62,6</th>
+<th>6,2</th>
+<th>11,3</th>
+<th>5973</th>
+<th>-27</th>
+<th>0,611</th>
+</tr>
+<tr>
+<th scope="row">Nicarágua</th>
+<th>0,599</th>
+<th>74,3</th>
+<th>5,8</th>
+<th>10,8</th>
+<th>2551</th>
+<th>10</th>
+<th>0,671</th>
+</tr>
+<tr>
+<th scope="row">Marrocos</th>
+<th>0,591</th>
+<th>72,4</th>
+<th>4,4</th>
+<th>10,4</th>
+<th>4384</th>
+<th>-13</th>
+<th>0,608</th>
+</tr>
+<tr>
+<th scope="row">Iraque</th>
+<th>0,59</th>
+<th>69,6</th>
+<th>5,6</th>
+<th>10</th>
+<th>3557</th>
+<th>-4</th>
+<th>0,623</th>
+</tr>
+<tr>
+<th scope="row">Cabo Verde</th>
+<th>0,586</th>
+<th>74,3</th>
+<th>3,5</th>
+<th>12,7</th>
+<th>3609</th>
+<th>-6</th>
+<th>0,617</th>
+</tr>
+<tr>
+<th scope="row">Guatemala</th>
+<th>0,581</th>
+<th>71,4</th>
+<th>4,1</th>
+<th>10,7</th>
+<th>4235</th>
+<th>-14</th>
+<th>0,596</th>
+</tr>
+<tr>
+<th scope="row">Timor-Leste</th>
+<th>0,576</th>
+<th>62,9</th>
+<th>4,4</th>
+<th>11,7</th>
+<th>5446</th>
+<th>-29</th>
+<th>0,569</th>
+</tr>
+<tr>
+<th scope="row">Gana</th>
+<th>0,558</th>
+<th>64,6</th>
+<th>7</th>
+<th>11,4</th>
+<th>1684</th>
+<th>22</th>
+<th>0,646</th>
+</tr>
+<tr>
+<th scope="row">Guiné Equatorial</th>
+<th>0,554</th>
+<th>51,4</th>
+<th>5,4</th>
+<th>7,9</th>
+<th>21715</th>
+<th>-97</th>
+<th>0,463</th>
+</tr>
+<tr>
+<th scope="row">Índia</th>
+<th>0,554</th>
+<th>65,8</th>
+<th>4,4</th>
+<th>10,7</th>
+<th>3285</th>
+<th>-3</th>
+<th>0,575</th>
+</tr>
+<tr>
+<th scope="row">Camboja</th>
+<th>0,543</th>
+<th>63,6</th>
+<th>5,8</th>
+<th>10,5</th>
+<th>2095</th>
+<th>9</th>
+<th>0,597</th>
+</tr>
+<tr>
+<th scope="row">Laos</th>
+<th>0,543</th>
+<th>67,8</th>
+<th>4,6</th>
+<th>10,1</th>
+<th>2435</th>
+<th>2</th>
+<th>0,584</th>
+</tr>
+<tr>
+<th scope="row">Butão</th>
+<th>0,538</th>
+<th>67,6</th>
+<th>2,3</th>
+<th>12,4</th>
+<th>5246</th>
+<th>-31</th>
+<th>0,516</th>
+</tr>
+<tr>
+<th scope="row">Suazilândia</th>
+<th>0,536</th>
+<th>48,9</th>
+<th>7,1</th>
+<th>10,7</th>
+<th>5104</th>
+<th>-30</th>
+<th>0,515</th>
+</tr>
+<tr>
+<th scope="row">Congo</th>
+<th>0,534</th>
+<th>57,8</th>
+<th>5,9</th>
+<th>10,1</th>
+<th>2934</th>
+<th>-5</th>
+<th>0,553</th>
+</tr>
+<tr>
+<th scope="row">Ilhas Salomão</th>
+<th>0,53</th>
+<th>68,2</th>
+<th>4,5</th>
+<th>9,3</th>
+<th>2172</th>
+<th>1</th>
+<th>0,572</th>
+</tr>
+<tr>
+<th scope="row">São Tomé e Príncipe</th>
+<th>0,525</th>
+<th>64,9</th>
+<th>4,7</th>
+<th>10,8</th>
+<th>1864</th>
+<th>7</th>
+<th>0,579</th>
+</tr>
+<tr>
+<th scope="row">Quênia</th>
+<th>0,519</th>
+<th>57,7</th>
+<th>7</th>
+<th>11,1</th>
+<th>1541</th>
+<th>15</th>
+<th>0,588</th>
+</tr>
+<tr>
+<th scope="row">Paquistão</th>
+<th>0,515</th>
+<th>69,2</th>
+<th>4,8</th>
+<th>8,1</th>
+<th>1785</th>
+<th>9</th>
+<th>0,567</th>
+</tr>
+<tr>
+<th scope="row">Bangladesh</th>
+<th>0,515</th>
+<th>65,7</th>
+<th>4,9</th>
+<th>7,3</th>
+<th>2566</th>
+<th>-9</th>
+<th>0,534</th>
+</tr>
+<tr>
+<th scope="row">Angola</th>
+<th>0,508</th>
+<th>51,5</th>
+<th>4,7</th>
+<th>10,2</th>
+<th>4812</th>
+<th>-35</th>
+<th>0,479</th>
+</tr>
+<tr>
+<th scope="row">Miamar</th>
+<th>0,498</th>
+<th>65,7</th>
+<th>3,9</th>
+<th>9,4</th>
+<th>1817</th>
+<th>5</th>
+<th>0,537</th>
+</tr>
+<tr>
+<th scope="row">Camarões</th>
+<th>0,495</th>
+<th>52,1</th>
+<th>5,9</th>
+<th>10,9</th>
+<th>2114</th>
+<th>-4</th>
+<th>0,52</th>
+</tr>
+<tr>
+<th scope="row">Madagascar</th>
+<th>0,483</th>
+<th>66,9</th>
+<th>5,2</th>
+<th>10,4</th>
+<th>828</th>
+<th>28</th>
+<th>0,601</th>
+</tr>
+<tr>
+<th scope="row">Tanzânia</th>
+<th>0,476</th>
+<th>58,9</th>
+<th>5,1</th>
+<th>9,1</th>
+<th>1383</th>
+<th>10</th>
+<th>0,527</th>
+</tr>
+<tr>
+<th scope="row">Nigéria</th>
+<th>0,471</th>
+<th>52,3</th>
+<th>5,2</th>
+<th>9</th>
+<th>2102</th>
+<th>-6</th>
+<th>0,482</th>
+</tr>
+<tr>
+<th scope="row">Senegal</th>
+<th>0,47</th>
+<th>59,6</th>
+<th>4,5</th>
+<th>8,2</th>
+<th>1653</th>
+<th>4</th>
+<th>0,501</th>
+</tr>
+<tr>
+<th scope="row">Mauritânia</th>
+<th>0,467</th>
+<th>58,9</th>
+<th>3,7</th>
+<th>8,1</th>
+<th>2174</th>
+<th>-12</th>
+<th>0,473</th>
+</tr>
+<tr>
+<th scope="row">Papua Nova Guiné</th>
+<th>0,466</th>
+<th>63,1</th>
+<th>3,9</th>
+<th>5,8</th>
+<th>2386</th>
+<th>-15</th>
+<th>0,464</th>
+</tr>
+<tr>
+<th scope="row">Nepal</th>
+<th>0,463</th>
+<th>69,1</th>
+<th>3,2</th>
+<th>8,9</th>
+<th>1137</th>
+<th>11</th>
+<th>0,526</th>
+</tr>
+<tr>
+<th scope="row">Lesoto</th>
+<th>0,461</th>
+<th>48,7</th>
+<th>5,9</th>
+<th>9,6</th>
+<th>1879</th>
+<th>-8</th>
+<th>0,476</th>
+</tr>
+<tr>
+<th scope="row">Togo</th>
+<th>0,459</th>
+<th>57,5</th>
+<th>5,3</th>
+<th>10,6</th>
+<th>928</th>
+<th>16</th>
+<th>0,542</th>
+</tr>
+<tr>
+<th scope="row">Iêmen</th>
+<th>0,458</th>
+<th>65,9</th>
+<th>2,5</th>
+<th>8,7</th>
+<th>1820</th>
+<th>-7</th>
+<th>0,474</th>
+</tr>
+<tr>
+<th scope="row">Uganda</th>
+<th>0,456</th>
+<th>62,4</th>
+<th>4,9</th>
+<th>7,6</th>
+<th>1070</th>
+<th>7</th>
+<th>0,521</th>
+</tr>
+<tr>
+<th scope="row">Haiti</th>
+<th>0,456</th>
+<th>54,5</th>
+<th>4,7</th>
+<th>11,1</th>
+<th>1168</th>
+<th>5</th>
+<th>0,511</th>
+</tr>
+<tr>
+<th scope="row">Zâmbia</th>
+<th>0,448</th>
+<th>49,4</th>
+<th>6,7</th>
+<th>8,5</th>
+<th>1358</th>
+<th>0</th>
+<th>0,483</th>
+</tr>
+<tr>
+<th scope="row">Djibouti</th>
+<th>0,445</th>
+<th>58,3</th>
+<th>3,8</th>
+<th>5,7</th>
+<th>2350</th>
+<th>-22</th>
+<th>0,435</th>
+</tr>
+<tr>
+<th scope="row">Gâmbia</th>
+<th>0,439</th>
+<th>58,8</th>
+<th>2,8</th>
+<th>8,7</th>
+<th>1731</th>
+<th>-9</th>
+<th>0,448</th>
+</tr>
+<tr>
+<th scope="row">Benin</th>
+<th>0,436</th>
+<th>56,5</th>
+<th>3,2</th>
+<th>9,4</th>
+<th>1439</th>
+<th>-5</th>
+<th>0,459</th>
+</tr>
+<tr>
+<th scope="row">Ruanda</th>
+<th>0,434</th>
+<th>55,7</th>
+<th>3,3</th>
+<th>10,9</th>
+<th>1147</th>
+<th>0</th>
+<th>0,476</th>
+</tr>
+<tr>
+<th scope="row">Costa do Marfim</th>
+<th>0,432</th>
+<th>56</th>
+<th>4,2</th>
+<th>6,5</th>
+<th>1593</th>
+<th>-9</th>
+<th>0,444</th>
+</tr>
+<tr>
+<th scope="row">Comoros</th>
+<th>0,429</th>
+<th>61,5</th>
+<th>2,8</th>
+<th>10,2</th>
+<th>986</th>
+<th>4</th>
+<th>0,484</th>
+</tr>
+<tr>
+<th scope="row">Malawi</th>
+<th>0,418</th>
+<th>54,8</th>
+<th>4,2</th>
+<th>10,4</th>
+<th>774</th>
+<th>10</th>
+<th>0,492</th>
+</tr>
+<tr>
+<th scope="row">Sudão</th>
+<th>0,414</th>
+<th>61,8</th>
+<th>3,1</th>
+<th>4,5</th>
+<th>1848</th>
+<th>-19</th>
+<th>0,405</th>
+</tr>
+<tr>
+<th scope="row">Zimbábue</th>
+<th>0,397</th>
+<th>52,7</th>
+<th>7,2</th>
+<th>10,1</th>
+<th>424</th>
+<th>14</th>
+<th>0,542</th>
+</tr>
+<tr>
+<th scope="row">Etiópia</th>
+<th>0,396</th>
+<th>59,7</th>
+<th>2,2</th>
+<th>8,7</th>
+<th>1017</th>
+<th>-2</th>
+<th>0,425</th>
+</tr>
+<tr>
+<th scope="row">Libéria</th>
+<th>0,388</th>
+<th>57,3</th>
+<th>3,9</th>
+<th>10,5</th>
+<th>480</th>
+<th>11</th>
+<th>0,502</th>
+</tr>
+<tr>
+<th scope="row">Afeganistão</th>
+<th>0,374</th>
+<th>49,1</th>
+<th>3,1</th>
+<th>8,1</th>
+<th>1000</th>
+<th>-3</th>
+<th>0,393</th>
+</tr>
+<tr>
+<th scope="row">Guiné Bissau</th>
+<th>0,364</th>
+<th>48,6</th>
+<th>2,3</th>
+<th>9,5</th>
+<th>1042</th>
+<th>-6</th>
+<th>0,373</th>
+</tr>
+<tr>
+<th scope="row">Serra Leoa</th>
+<th>0,359</th>
+<th>48,1</th>
+<th>3,3</th>
+<th>7,3</th>
+<th>881</th>
+<th>0</th>
+<th>0,38</th>
+</tr>
+<tr>
+<th scope="row">Burundi</th>
+<th>0,355</th>
+<th>50,9</th>
+<th>2,7</th>
+<th>11,3</th>
+<th>544</th>
+<th>4</th>
+<th>0,423</th>
+</tr>
+<tr>
+<th scope="row">Guiné</th>
+<th>0,355</th>
+<th>54,5</th>
+<th>1,6</th>
+<th>8,8</th>
+<th>941</th>
+<th>-4</th>
+<th>0,368</th>
+</tr>
+<tr>
+<th scope="row">República Centro-Africana</th>
+<th>0,352</th>
+<th>49,1</th>
+<th>3,5</th>
+<th>6,8</th>
+<th>722</th>
+<th>1</th>
+<th>0,386</th>
+</tr>
+<tr>
+<th scope="row">Eritrea</th>
+<th>0,351</th>
+<th>62</th>
+<th>3,4</th>
+<th>4,6</th>
+<th>531</th>
+<th>3</th>
+<th>0,418</th>
+</tr>
+<tr>
+<th scope="row">Mali</th>
+<th>0,344</th>
+<th>51,9</th>
+<th>2</th>
+<th>7,5</th>
+<th>853</th>
+<th>-4</th>
+<th>0,359</th>
+</tr>
+<tr>
+<th scope="row">Burkina Faso</th>
+<th>0,343</th>
+<th>55,9</th>
+<th>1,3</th>
+<th>6,9</th>
+<th>1202</th>
+<th>-18</th>
+<th>0,332</th>
+</tr>
+<tr>
+<th scope="row">Chade</th>
+<th>0,34</th>
+<th>49,9</th>
+<th>1,5</th>
+<th>7,4</th>
+<th>1258</th>
+<th>-20</th>
+<th>0,324</th>
+</tr>
+<tr>
+<th scope="row">Moçambique</th>
+<th>0,327</th>
+<th>50,7</th>
+<th>1,2</th>
+<th>9,2</th>
+<th>906</th>
+<th>-9</th>
+<th>0,327</th>
+</tr>
+<tr>
+<th scope="row">Congo</th>
+<th>0,304</th>
+<th>48,7</th>
+<th>3,5</th>
+<th>8,5</th>
+<th>319</th>
+<th>0</th>
+<th>0,404</th>
+</tr>
+<tr>
+<th scope="row">Niger</th>
+<th>0,304</th>
+<th>55,1</th>
+<th>1,4</th>
+<th>4,9</th>
+<th>701</th>
+<th>-4</th>
+<th>0,313</th>
+</tr>
+
+	</tbody>
+</table>
+		</div>
+	</body>
+</html>
