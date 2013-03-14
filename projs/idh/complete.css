@@ -24,7 +24,7 @@ body {
 
 #container {
 	margin: 0 auto;
-	width: 960px
+	width: 100%; 
 }
 
 h1 {
@@ -102,6 +102,7 @@ table.pretty th {
 table.pretty thead th {
 	text-align: center;
 	background: #66a9bd;
+  padding-right: 15px;
 }
 
 /* Body cells */
@@ -115,8 +116,16 @@ table.pretty tbody td {
 	background: #d5eaf0;
 }
 		
-table.pretty tbody tr.odd td { 
-	background: #bcd9e1;
+table.pretty tbody tr.odd th { 
+	background: rgb(175, 207, 216);
+}
+
+table.pretty tbody tr.even th { 
+	background: rgb(153, 198, 211);
+}
+
+.brasil th {
+  font-weight: bold;
 }
 
 /* Footer cells */	
