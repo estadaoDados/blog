@@ -106,102 +106,6 @@ if ( !function_exists( 'mb_substr_replace' ) ) {
     }
 }
 
-function print_settings() {
-global $wpt_version;
-
-$bitlyapi = ( get_option ( 'bitlyapi' ) != '' )?"Saved.":"Blank.";
-$yourlsapi = ( get_option ( 'yourlsapi' ) != '' )?"Saved.":"Blank.";
-$post_type_settings = get_option('wpt_post_types');
-$group = array();
-if (is_array($post_type_settings)) {
-$post_types = array_keys($post_type_settings);
-	foreach ($post_types as $type) {
-		foreach ($post_type_settings[$type] as $key=>$value ) {
-			$group[$type][$key] = $value;
-		}
-	}
-}
-$options = array( 
-	'comment-published-update'=>get_option('comment-published-update'),
-	'comment-published-text'=>get_option('comment-published-text'),
-	
-	'jd_twit_blogroll'=>get_option( 'jd_twit_blogroll' ),
-
-	'jd_shortener'=>get_option( 'jd_shortener' ),
-	
-	'wtt_twitter_username'=>get_option( 'wtt_twitter_username' ),
-	'app_consumer_key'=>get_option('app_consumer_key'),
-	'app_consumer_secret'=>get_option('app_consumer_secret'),
-	'oauth_token'=>get_option('oauth_token'),
-	'oauth_token_secret'=>get_option('oauth_token_secret'),
-	
-	'suprapi'=>get_option( 'suprapi' ),
-	'bitlylogin'=>get_option( 'bitlylogin' ),
-	'bitlyapi'=>$bitlyapi,
-	'yourlsapi'=>$yourlsapi,
-	'yourlspath'=>get_option( 'yourlspath' ),
-	'yourlsurl' =>get_option( 'yourlsurl' ),
-	'yourlslogin'=>get_option( 'yourlslogin' ),	
-	'jd_keyword_format'=>get_option( 'jd_keyword_format' ),
-	
-	'jd_strip_nonan'=>get_option( 'jd_strip_nonan' ),
-	'jd_replace_character'=>get_option( 'jd_replace_character' ),
-	'jd_max_tags'=>get_option('jd_max_tags'),
-	'jd_max_characters'=>get_option('jd_max_characters'),	
-	'jd_post_excerpt'=>get_option( 'jd_post_excerpt' ),
-	'jd_date_format'=>get_option( 'jd_date_format' ),
-	'jd_twit_prepend'=>get_option( 'jd_twit_prepend' ),
-	'jd_twit_append'=>get_option( 'jd_twit_append' ),
-	'jd_twit_custom_url'=>get_option( 'jd_twit_custom_url' ),
-	
-	'jd_tweet_default'=>get_option( 'jd_tweet_default' ),
-	'jd_tweet_default_edit'=>get_option( 'jd_tweet_default_edit' ),
-	'jd_twit_remote'=>get_option( 'jd_twit_remote' ),
-	
-	'use-twitter-analytics'=>get_option( 'use-twitter-analytics' ),
-	'twitter-analytics-campaign'=>get_option( 'twitter-analytics-campaign' ),
-	'use_dynamic_analytics'=>get_option( 'use_dynamic_analytics' ),
-	'jd_dynamic_analytics'=>get_option( 'jd_dynamic_analytics' ),
-	
-	'jd_individual_twitter_users'=>get_option( 'jd_individual_twitter_users' ),
-	'wtt_user_permissions'=>get_option('wtt_user_permissions'),
-	
-	'wp_twitter_failure'=>get_option( 'wp_twitter_failure' ),
-	'wp_url_failure' =>get_option( 'wp_url_failure' ),
-	'wp_bitly_error'=>get_option( 'wp_bitly_error' ),
-	'wp_supr_error'=>get_option( 'wp_supr_error' ),
-	'wp_to_twitter_version'=>get_option( 'wp_to_twitter_version'),
-	
-	'disable_url_failure'=>get_option('disable_url_failure' ),
-	'disable_twitter_failure'=>get_option('disable_twitter_failure' ),
-	'disable_oauth_notice'=>get_option('disable_oauth_notice'),
-	'wp_debug_oauth'=>get_option('wp_debug_oauth'),
-	'jd_donations'=>get_option( 'jd_donations' ),
-	
-	'tweet_categories'=>get_option('tweet_categories' ),
-	'limit_categories'=>get_option('limit_categories' ),
-	'twitterInitialised'=>get_option( 'twitterInitialised' )	
-);
-echo "<div class=\"settings\">";
-echo "<strong>Raw Settings Output: Version $wpt_version</strong>";
-echo "<ol>";
-foreach ( $group as $key=>$value)  {
-	echo "<li><code>$key</code>:<ul>";
-	foreach ( $value as $k=>$v ) {
-		echo "<li><code>$k</code>: $v</li>";
-	}
-	echo "</ul></li>";
-}
-foreach ($options as $key=>$value) {
-	echo "<li><code>$key</code>:$value</li>";
-}
-
-echo "</ol>";
-echo "<p>";
-_e( "[<a href='options-general.php?page=wp-to-twitter/wp-to-twitter.php'>Hide</a>] If you're experiencing trouble, please copy these settings into any request for support.",'wp-to-twitter');
-echo "</p></div>";
-}
-
 function wtt_option_selected($field,$value,$type='checkbox') {
 	switch ($type) {
 		case 'radio':		
@@ -276,12 +180,14 @@ get_currentuserinfo();
 				$plugins_string .= "$plugin_name: $plugin_version; $plugin_uri\n";
 			}
 		}
+	global $wpt_server_string;
 	$data = "
 ================ Installation Data ====================
 ==WP to Twitter==
 Version: $version
 Twitter username: http://twitter.com/$wtt_twitter_username
 $license
+$wpt_server_string
 
 ==WordPress:==
 Version: $wp_version
@@ -336,10 +242,6 @@ $plugins_string
 		<div><input type='hidden' name='_wpnonce' value='".wp_create_nonce('wp-to-twitter-nonce')."' /></div>
 		<div>";
 		if ( function_exists( 'wpt_pro_exists' ) && wpt_pro_exists() == true  ) {
-		echo "
-		<p>".
-		__('Please include your license key in your support request.','wp-to-twitter')
-		."</p>";
 		} else { 
 		echo "
 		<p>".
@@ -357,7 +259,7 @@ $plugins_string
         <input type='checkbox' name='has_donated' id='has_donated' value='on' $checked /> <label for='has_donated'>".sprintf(__('I have <a href="%1$s">made a donation to help support this plug-in</a>','wp-to-twitter'),'http://www.joedolson.com/donate.php')."</label>
         </p>
         <p>
-        <label for='support_request'>".__('Support Request:','wp-to-twitter')."</label><br /><textarea name='support_request' id='support_request' cols='80' rows='10'>".stripslashes($request)."</textarea>
+        <label for='support_request'>".__('Support Request:','wp-to-twitter')."</label><br /><textarea class='support-request' name='support_request' id='support_request' cols='80' rows='10'>".stripslashes($request)."</textarea>
 		</p>
 		<p>
 		<input type='submit' value='".__('Send Support Request','wp-to-twitter')."' name='wpt_support' class='button-primary' />

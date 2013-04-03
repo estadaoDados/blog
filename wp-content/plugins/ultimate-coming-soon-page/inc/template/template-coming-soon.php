@@ -75,7 +75,7 @@ global $seedprod_comingsoon;
     <div id="coming-soon-main" role="main">
         <div id="coming-soon">
             <?php if(!empty($sc_jdt['comingsoon_image'])): ?>
-            <img id="teaser-image" src="<?php echo $sc_jdt['comingsoon_image'] ?>" alt="Teaser"/>
+            <img id="teaser-image" src="<?php echo $sc_jdt['comingsoon_image'] ?>" alt="Teaser" usemap="#teaser-image" />
             <?php endif; ?>
             <h1 id="teaser-headline"><?php echo $sc_jdt['comingsoon_headline'] ?></h1>
             <p id="teaser-description"><?php echo $sc_jdt['comingsoon_description'] ?></p>

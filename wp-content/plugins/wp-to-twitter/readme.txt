@@ -2,16 +2,18 @@
 Contributors: joedolson
 Donate link: http://www.joedolson.com/donate.php
 Tags: twitter, microblogging, su.pr, bitly, yourls, redirect, shortener, post, links
-Requires at least: 3.0.6
+Requires at least: 3.1.4
 Tested up to: 3.5.1
 License: GPLv2 or later
 Stable tag: trunk
 
-Auto-posts a Twitter update when you update your WordPress blog or blogroll, with your chosen URL shortening service. Requires PHP 5. 
+Auto-posts a Twitter update when you update your WordPress blog or blogroll, with your chosen URL shortening service.
 
 == Description ==
 
-WP to Twitter automatically posts a Tweet from your WordPress blog to Twitter using your URL shortening service to provide a link back to your post from Twitter. 
+WP to Twitter automatically posts Tweets from WordPress to Twitter using your URL shortening service to provide a link back to your post from Twitter. 
+
+Upgrade to [WP Tweets Pro](http://www.joedolson.com/articles/wp-tweets-pro/)
 
 The plugin supports a customizable Tweet template for updating or editing posts and pages, supports your custom post types, and allows you to write a custom Tweet for each post, using a selection of custom template tags to generate the text. 
 
@@ -24,7 +26,7 @@ Additional features include:
 * Support for Google Analytics
 * Limiting Tweeting from specific categories
 
-Any status update you write which is longer than 140 characters will be truncated by the plugin. 
+Any status update longer than 140 characters will be truncated by the plugin. 
 
 Upgrade to [WP Tweets Pro](http://www.joedolson.com/articles/wp-tweets-pro/) for extra features, including:
 
@@ -39,10 +41,7 @@ Translations:
 Visit the [WP to Twitter translations page](http://translate.joedolson.com/projects/wp-to-twitter) to see how complete these are.
 
 Languages available (in order of completeness):
-French, Italian, Dutch, Chinese, Portuguese, Japanese, Romanian, Danish, Estonian, Russian, Lithuanian, Belarusian, Ukrainian, German, Irish, Spanish, Turkish, Persian
-
-Translator Credits (in no particular order)*:
-[Ale Gonzalez](http://60rpm.tv/i), [Outshine Solutions](http://outshinesolutions.com), [Jakob Smith](http://www.omkalfatring.dk/),, [globus2008](http://wordpress.org/support/profile/globus2008), Frederic Escallier, Luud Heck, Wim Strijbos, [Daisuke Abe](http://www.alter-ego.jp/), [Alex](http://blog.sotvoril.ru/), Mehmet Ko&ccedil;ali, Uwe Jonas, Florian Edelmann, Efva Nyberg, [Sabir Musta](http://mustaphasabir.altervista.org), Massimo Sgobino, Leonardo Kfoury, Alexandre Carvalho, Amir Khalilnejad, [Aurelio De Rosa](http://www.audero.it/), Bayram Dede, Dani Locasati, Dario Nunez, Dirk Ginader, Evren Erten, Fl&aacute;vio Pereira, Francois-Xavier Benard, [Gianni Diurno](http://www.gidibao.net), Giksi, Heinz Ochsner,  Kazuyuki Kumai, Liam Boogar, Maks, Mano, Massimo Sgobino, Mohsen Aghaei, Oscar Romero, [Rashid Niamat](http://niamatmediagroup.nl/), Stefan Wikstrom, Thomas Meyer, Vedar Ozdemir, [Vikas Arora](http://www.wiznicworld.com), [Miriam de Paula](http://wpmidia.com.br), [HostUCan](http://www.hostucan.com), [Alex Alexandrov](http://www.webhostingrating.com), [Alyona Lompar](http://www.webhostinggeeks.com), [David Gil P&eacute;rez](http://www.sohelet.com), [Burkov Boris](http://chernobog.ru), [Raivo Ratsep](http://raivoratsep.com), [Jibo](http://jibo.ro), [Rasmus Himmelstrup](http://seoanalyst.dk), [kndb](http://blog.layer8.sh/)
+Danish, French, Italian, Catalan, Dutch, Chinese, Portuguese, Japanese, Romanian, Estonian, German, Ukrainian, Russian, Lithuanian, Belarusian, Irish, Spanish, Turkish, Persian
 
 Translating my plug-ins is always appreciated. Visit <a href="http://translate.joedolson.com">my translations site</a> to start getting your language into shape!
 
@@ -51,6 +50,20 @@ Credits:
 Contributions by [Thor Erik](http://www.thorerik.net), Bill Berry and [Andrea Baccega](http://www.andreabaccega.com).  Some code previously contributed is no longer in this plug-in. Other bug fixes and related citations can be found in the changelog.
 
 == Changelog ==
+
+= 2.6.0 =
+
+* Support for new features in WP Tweets PRO 1.4.0.
+* Minor interface tweaks.
+* Removed settings export (it was out of date and nobody sent it anyway).
+* Bug fix: bad settings link in API failure warnings.
+* Bug fix: URL shortener returned error when not shortening URLs.
+* Bug fix: Category limits are not applied if 'category' is not an available taxonomy.
+* Bug fix: Prevent publish actions from running twice for scheduled posts.
+* Change: significant changes to large portions of plug-in text. My apologies to translators...but there's less text, now!
+* File restructuring and code cleanup.
+* Added Danish translation.
+* Updated French translation.
 
 = 2.5.9 =
 
@@ -779,4 +792,4 @@ Writing and maintaining a plug-in is a lot of work. You can help me by providing
 
 == Upgrade Notice ==
 
-* 2.5.7 Changes in 2.5.6 only effect people using the WP Tweets PRO upgrade.
+* 2.6.0 Bug fixes, new translations, WP Tweets PRO features.

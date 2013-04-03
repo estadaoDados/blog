@@ -16,7 +16,6 @@
 (function($) {
 
 	$.fn.charCount = function(options){
-	  
 		// default configuration properties
 		var defaults = {	
 			allowed: 140,		
@@ -52,7 +51,7 @@
 		};
 				
 		this.each(function() {  			
-			$(this).after('<'+ options.counterElement +' class="' + options.css + '">'+ options.counterText +'</'+ options.counterElement +'>');
+			$(this).after('<'+ options.counterElement +' aria-live="polite" aria-atomic="true" class="' + options.css + '">'+ options.counterText +'</'+ options.counterElement +'>');
 			calculate(this);
 			$(this).keyup(function(){calculate(this)});
 			$(this).change(function(){calculate(this)});

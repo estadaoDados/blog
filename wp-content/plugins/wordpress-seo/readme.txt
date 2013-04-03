@@ -6,7 +6,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
 Tags: seo, SEO, google, meta, meta description, search engine optimization, xml sitemap, xml sitemaps, google sitemap, sitemap, sitemaps, robots meta, rss, rss footer, yahoo, bing, news sitemaps, XML News Sitemaps, WordPress SEO, WordPress SEO by Yoast, yoast, multisite, canonical, nofollow, noindex, keywords, meta keywords, description, webmaster tools, google webmaster tools, seo pack
 Requires at least: 3.3
 Tested up to: 3.5
-Stable tag: 1.4.3
+Stable tag: 1.4.4
 
 Improve your WordPress SEO: Write better content and have a fully optimized WordPress site using the WordPress SEO plugin by Yoast.
 
@@ -141,7 +141,15 @@ rewrite ^/([^/]+?)-sitemap([0-9]+)?\.xml$ /index.php?sitemap=$1&sitemap_n=$2 las
 
 == Changelog ==
 
-= trunk =
+= 1.4.4 =
+
+* Fix changelog for 1.4.3
+* Bugfixes
+    * Fix activation bug.
+* i18n
+	* Updated es_ES, id_ID, he_IL.
+
+= 1.4.3 =
 
 * Bugfixes
     * Register core SEO menu at a lower than default prio so other plugins can tie in more easily.
