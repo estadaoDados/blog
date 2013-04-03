@@ -2,7 +2,7 @@
 /* 
 Plugin Name: WP Google Fonts
 Plugin URI: http://adrian3.com/projects/wordpress-plugins/wordpress-google-fonts-plugin/
-Version: v3.0.1
+Version: v3.1.1
 Description: The Wordpress Google Fonts Plugin makes it even easier to add and customize Google fonts on your site through Wordpress. 
 Author: Adrian Hanft, Aaron Brown
 Author URI: http://adrian3.com/
@@ -34,8 +34,6 @@ if ( ! defined( 'WP_PLUGIN_DIR' ) )
       define( 'WP_PLUGIN_DIR', WP_CONTENT_DIR . '/plugins' );
 
 /* TODO 
-Update styling
-test fallback to include file if fopen and curl are not available
 write javascript to handle no saving when no real changes have been made
 */
 
@@ -164,14 +162,20 @@ if (!class_exists('googlefonts')) {
             add_action('admin_enqueue_scripts',array(&$this,'gf_admin_scripts'));
 			
 			add_action('wp_enqueue_scripts',array(&$this, 'googlefontsstart'));
-			add_action("wp_head", array(&$this,"addgooglefontscss"));            
+			add_action("wp_head", array(&$this,"addgooglefontscss")); 
+
+			add_action('wp_ajax_googlefont_action', array($this, 'googlefont_action_callback'));			
         }
 
 		/***********************************************/
+		
+		
 		function gf_admin_scripts(){
 			if(isset($_GET['page']) && $_GET['page'] == $this->gf_filename){
-				wp_enqueue_script('google-font-admin',$this->thispluginurl . 'scripts/gf-scripts.js',array('jquery'));
-				wp_enqueue_style('gf-admin-style',$this->thispluginurl . 'styles/gf-style.css');
+				//wp_enqueue_script('google-font-admin',$this->thispluginurl . 'scripts/gf-scripts.js',array('jquery'));
+				//wp_enqueue_script('google-font-admin-ajax',$this->thispluginurl . 'scripts/gf-scripts-ajax.js',array('jquery'));
+				wp_enqueue_style('gf-admin-style',$this->thispluginurl . 'styles/gf-style.css', array(), '3.1.1');
+				//wp_localize_script( 'google-font-admin-ajax', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ), 'gfvalue' => 1234 ) );
 			}
 		}
 
@@ -199,7 +203,7 @@ if (!class_exists('googlefonts')) {
 				$fonts_object = json_decode($json);
 			}
 			if($fonts_object && is_object($fonts_object)){
-				if($fonts_object->error){
+				if(isset($fonts_object->error) && $fonts_object->error){
 					$this->gf_notices[] = sprintf(__('Google API Error: %s. %s', $this->localizationDomain), $fonts_object->error->code, $fonts_object->error->message);
 				}
 				if($fonts_object->items && is_array($fonts_object->items)){
@@ -326,7 +330,8 @@ if (!class_exists('googlefonts')) {
 			return $fonts;
 		}
 
-		function gf_get_fonts_select($name="googlefont"){
+		function gf_get_fonts_select($name="googlefont"){			
+			//prefill all the select boxes because there's not as much overhead there.
 			$out = null;
 			
 			if($this->gf_fonts && is_array($this->gf_fonts)){
@@ -339,13 +344,11 @@ if (!class_exists('googlefonts')) {
 				$out .= "<div id='".$name."' class='googlefont-block'>\n";
 				
 				$out .= "<select name='".$name."[family]' id='".$name."-select' class='webfonts-select'>\n";
-				
+			
 				foreach($this->gf_fonts as $font){
 					$class = array();			
 					$has_variants = false;
 					$has_subsets = false;
-					$variant_single = " single";
-					$subset_single = " single";
 					$normalized_name = $this->gf_normalize_font_name($font->family);
 					$is_selection = false;
 					
@@ -356,13 +359,9 @@ if (!class_exists('googlefonts')) {
 					$class[] = $normalized_name;
 					
 					if(count($font->variants)>1){
-						$has_variants = true;
-						$variant_single = null;
 						$class[] = "has-variant";
 					}
 					if(count($font->subsets)>1){
-						$has_subsets = true;
-						$subset_single = null;
 						$class[] = "has-subsets";
 					}
 					
@@ -379,67 +378,33 @@ if (!class_exists('googlefonts')) {
 					$out.="<option class='".implode(" ",$class)."' value='".$normalized_name.
 							"' ".$this->gf_is_selected($normalized_name, $current_selection).">" . $font->family . "</option>\n";
 					
-					/* write the font family variants */
-					ksort($font->variants);
-					$variants .= "<div class='variant-".$normalized_name." variant-items".$variant_single."'>\n";
-					$vid = null;
-					foreach($font->variants as $variant){
-						$vid = $this->gf_normalize_font_name($font->family . " " . $this->gf_fancy_font_name($variant));
-						$vchecked = null;
-						$readonly = null;
-						if($is_selection){
-							$vchecked = $this->gf_is_variant_checked($variant, $this->options['googlefont_selections'][$name]['variants']);
-						}
-						if($is_selection && !$has_variants){
-							$readonly = " readonly='readonly'";
-						}
-						$variants .= '<input type="checkbox" id="'.$vid.'" name="'.$name.'[variants][]" value="'.
-										$variant.'" class="check ' . $normalized_name.'"'. $vchecked . $readonly . '> <label for="'.$vid.
-										'">' . $this->gf_fancy_font_name($variant) . '</label><br>';
+					if($is_selection){
+						/* get the font family variants */
+						$variants = $this->gf_get_font_variants($name, $font, $is_selection);
 						
+						/* get the font character type subsets */
+						$subsets = $this->gf_get_font_subsets($name, $font, $is_selection);
 					}
-					$variants .= "</div>\n";
-					
-					/* write the font character type subsets */
-					krsort($font->subsets);
-					$subsets .= "<div class='subset-".$normalized_name." subset-items'>\n";
-					$sid = null;
-					foreach($font->subsets as $subset){
-						$sid = $this->gf_normalize_font_name($font->family . " " . $subset);
-						$schecked = null;
-						$readonly = null;
-						if($is_selection){
-							$schecked = $this->gf_is_checked($subset, $this->options['googlefont_selections'][$name]['subsets']);
-						}
-						if($is_selection && !$has_subsets){
-							$readonly = " readonly='readonly'";
-						}
-						$subsets .= '<input type="checkbox" id="'.$sid.'" name="'.$name.'[subsets][]" value="'.
-										$subset.'" class="check ' . $normalized_name.'"'. $schecked . $readonly . '> <label for="'.$sid.
-										'">' . ucwords($subset) . '</label><br>';
-						
-					}
-					$subsets .= "</div>\n";
 				}
 				
 				$out.= "</select>\n";
 				
-				if($current_selection && $current_selection != 'off'){
-					$out .= '<a href="#'.$name.'-select" class="show_hide" id="show_hide-'.$current_selection.'">' . __('Show Options', $this->localizationDomain) . '</a>';
+				//if a font is already selected, get all of its details
+				//otherwise, create a blank input for each.
+				if(!$variants && !$subsets){
+					$variants = '<input type="checkbox" name="'.$name.'[variants][]" value="regular" class="check '.$normalized_name.' blank"> <label>Normal 400</label>';
+					$subsets = '<input type="checkbox" name="'.$name.'[subsets][]" value="latin" class="check '.$normalized_name.' blank"> <label>Latin</label>';
 				}
 				
+				if($current_selection && $current_selection != 'off'){
+					$out .= '<a href="#'.$name.'-select" class="show_hide" id="show_hide-'.$name.'">' . __('Show Options', $this->localizationDomain) . '</a>';
+				}
+				
+				/* add an ajax message div to indicate loading/waiting message or image */
+				$out.="<div class='webfonts-waiting'></div>\n";
+				
 				/* add a section for additional selections */
-				$out.= "<div class='webfonts-selections'>\n";
-					/* add in all variants that will appear through jQuery */
-					$out.= "<div class='webfonts-variants'><h3>" . __('1. Choose the font styles you want:*', $this->localizationDomain) . "</h3>\n".$variants."</div>\n";
-					
-					/* add in the dom elements the user would like it to affect and custom css box */
-					$out.= "<div class='webfonts-usage'><h3>" . __('2. Elements you want to assign this font to:*', $this->localizationDomain) . "</h3>\n".$this->gf_get_usage_checkboxes($name)."</div>\n";
-					$out.= "<div class='webfonts-css'><h3>" . __('3. Custom CSS (optional):', $this->localizationDomain) . "</h3>\n<textarea name='".$name."[css]' id='".$name."_css'>".stripslashes($this->options[$name."_css"])."</textarea>\n</div>\n";
-					
-					/* add in subsets */
-					$out.= "<div class='webfonts-subsets".$subset_single."'><h3>" . __('4. Choose character sets you want.', $this->localizationDomain) . "</h3>\n".$subsets."</div>\n";
-				$out.="</div>\n <!-- .webfonts-selections-->";
+				$out.= $this->gf_get_font_selections($name, $variants, $subsets);
 				
 				$out.='<div style="clear:both;"><input class="button-primary" type="submit" name="googlefonts_save" value="' . __('Save All Fonts', $this->localizationDomain) . '" /></div>';
 				
@@ -448,7 +413,128 @@ if (!class_exists('googlefonts')) {
 			
 			return $out;
 		}
+		
+		function gf_get_font_subsets($name, $font, $is_selection=false){
+			$subsets = null;
+			
+			if($font && isset($font->subsets)){
+				$normalized_name = $this->gf_normalize_font_name($font->family);
+				$has_subsets = false;
+				if(count($font->subsets)>1){
+					$has_subsets = true;
+				}
+				krsort($font->subsets);
+				$subsets .= "<div class='subset-".$normalized_name." subset-items'>\n";
+				$sid = null;
+				foreach($font->subsets as $subset){
+					$sid = $this->gf_normalize_font_name($font->family . " " . $subset);
+					$schecked = null;
+					$readonly = null;
+					if($is_selection){
+						$schecked = $this->gf_is_checked($subset, $this->options['googlefont_selections'][$name]['subsets']);
+					}
+					if($is_selection && !$has_subsets){
+						$readonly = " readonly='readonly'";
+					}
+					$subsets .= '<input type="checkbox" id="'.$sid.'" name="'.$name.'[subsets][]" value="'.
+									$subset.'" class="check ' . $normalized_name.'"'. $schecked . $readonly . '> <label for="'.$sid.
+									'">' . ucwords($subset) . '</label><br>';
+					
+				}
+				$subsets .= "</div>\n";
+			}
+			return $subsets;
+		}
+		
+		function gf_get_font_variants($name, $font=null, $is_selection=false){
+			$variants = null;
+			if($font && isset($font->variants)){
+				$normalized_name = $this->gf_normalize_font_name($font->family);
+				$has_variants = false;
+				if(count($font->variants)>1){
+					$has_variants = true;
+				}
+				ksort($font->variants);
+				$variants .= "<div class='variant-".$normalized_name." variant-items'>\n";
+				$vid = null;
+				foreach($font->variants as $variant){
+					$vid = $this->gf_normalize_font_name($font->family . " " . $this->gf_fancy_font_name($variant));
+					$vchecked = null;
+					$readonly = null;
+					if($is_selection){
+						$vchecked = $this->gf_is_variant_checked($variant, $this->options['googlefont_selections'][$name]['variants']);
+					}
+					if($is_selection && !$has_variants){
+						$readonly = " readonly='readonly'";
+					}
+					$variants .= '<input type="checkbox" id="'.$vid.'" name="'.$name.'[variants][]" value="'.
+									$variant.'" class="check ' . $normalized_name.'"'. $vchecked . $readonly . '> <label for="'.$vid.
+									'">' . $this->gf_fancy_font_name($variant) . '</label><br>';
+					
+				}
+				$variants .= "</div>\n";
+			}
+			return $variants;
+		}
+		
+		function gf_get_font_selections($name, $variants, $subsets){
+			$out = null;
+			$out.= "<div class='webfonts-selections'>\n";
+				
+				/* preview the font...coming soon 
+				if(isset($this->options['googlefont_selections'][$name]['family'])){
+					$normal_name = $this->options['googlefont_selections'][$name]['family'];
+					if($normal_name){
+						$out.= "<div class='webfonts-preview'><h3>".__('Preview:', $this->localizationDomain)."</h3>\n";
+						$out.= "<iframe width='608' src='http://www.google.com/webfonts/specimen/".$normal_name."'></iframe>";
+						$out.= "</div>\n";
+					}
+				}*/
 
+				/* add in all variants that will appear through jQuery */
+				$out.= "<div class='webfonts-variants'><h3>" . __('1. Choose the font styles you want:*', $this->localizationDomain) . "</h3>\n".$variants."</div>\n";
+				
+				/* add in the dom elements the user would like it to affect and custom css box */
+				$out.= "<div class='webfonts-usage'><h3>" . __('2. Elements you want to assign this font to:*', $this->localizationDomain) . "</h3>\n".$this->gf_get_usage_checkboxes($name)."</div>\n";
+				$out.= "<div class='webfonts-css'><h3>" . __('3. Custom CSS (optional):', $this->localizationDomain) . "</h3>\n<textarea name='".$name."[css]' id='".$name."_css'>".stripslashes($this->options[$name."_css"])."</textarea>\n</div>\n";
+				
+				/* add in subsets */
+				$out.= "<div class='webfonts-subsets'><h3>" . __('4. Choose character sets you want.', $this->localizationDomain) . "</h3>\n".$subsets."</div>\n";
+			$out.="</div>";
+			return $out;
+		}
+		
+		function gf_get_font_data_by_family($googlefont, $family, $data_type){
+			$data = null;
+			if(is_string($family)){
+				$font = null;
+				
+				if($this->gf_fonts){
+					if(!is_array($this->gf_fonts)){
+						$fonts = json_decode($this->gf_fonts);
+					}else{
+						$fonts = $this->gf_fonts;
+					}
+
+					foreach($fonts->items as $findfont){
+						if($this->gf_normalize_font_name($findfont->family) == $family){
+							$font = $findfont;
+						}
+					}
+				}
+				if($font && is_object($font)){
+					if($data_type == 'variants'){
+						$data = $this->gf_get_font_variants($googlefont, $font);
+					}
+					if($data_type == 'subsets'){
+						$data = $this->gf_get_font_subsets($googlefont, $font);
+					}
+				}
+			}
+			
+			return $data;
+		}
+		
 		function gf_is_selected($item, $compare){
 			if(is_string($item)){$item = strtolower($item);}
 			if(is_string($compare)){$compare = strtolower($compare);}
@@ -776,7 +862,8 @@ if (!class_exists('googlefonts')) {
 							'variants' => array(),
 							'subsets' => array()
 						)
-					)
+					),
+				'googlefont_data_converted' => false
 			);
                 update_option($this->optionsName, $theOptions);
             }
@@ -795,59 +882,85 @@ if (!class_exists('googlefonts')) {
 		
 		/* convert fonts in old options variable to new array variable */
 		function gf_convert_fonts(){
-			foreach($this->gf_element_names as $option => $name){
-				$family = null;
-				$variants = array();
-				
-				if($this->options[$option]){
+			$converted = false;
+			if(isset($this->options['googlefont_data_converted'])){
+				$converted = $this->options['googlefont_data_converted'];
+			}
+			if(!$converted){
+				foreach($this->gf_element_names as $option => $name){
+					$family = null;
+					$variants = array();
 					
-					if($this->options[$option] == 'off'){
-						/* set to empty array for this font */
-						$this->options['googlefont_selections'][$name] = array();
-					}else{
-						/* convert current string to array */
-						/* get the font family, everything left of the ':' */
-						$font = $this->options[$option];
-						$delim = stripos($font,":");
+					if(isset($this->options[$option]) && $this->options[$option]){
 						
-						if($delim  !== false){
-							$family = $this->gf_normalize_font_name(substr($font, 0, $delim));
-							$variations = substr($font, $delim + 1);
-							$variants = explode(",",$variations);
+						if($this->options[$option] == 'off'){
+							/* set to empty array for this font */
+							$this->options['googlefont_selections'][$name] = array(
+								'family' => null,
+								'variants' => array(),
+								'subsets' => array()
+							);
 						}else{
-							$family = $this->gf_normalize_font_name($font);
-							$variants = array('regular');
-						}
-						
-						/* standardize all '400' to 'regular', and '400italic' to 'italic',
-						 * and 'bold' to 700 and bolditalic to 700italic, and 'light' to 300
-						 * to match Google's naming convention */
-						if($variants && is_array($variants)){
-							foreach($variants as $key => $val){
-								if($val == '400' || $val == 400){$variants[$key] = 'regular';}
-								if($val == '400italic'){$variants[$key] = 'italic';}
-								if(strtolower($val) == 'bold'){$variants[$key] = '700';}
-								if(strtolower($val) == 'bolditalic'){$variants[$key] = '700italic';}
-								if(strtolower($val) == 'light'){$variants[$key] = '300';}
-								if(strtolower($val) == 'lightitalic'){$variants[$key] = '300italic';}
+							/* convert current string to array */
+							/* get the font family, everything left of the ':' */
+							$font = $this->options[$option];
+							$delim = stripos($font,":");
+							
+							if($delim  !== false){
+								$family = $this->gf_normalize_font_name(substr($font, 0, $delim));
+								$variations = substr($font, $delim + 1);
+								$variants = explode(",",$variations);
+							}else{
+								$family = $this->gf_normalize_font_name($font);
+								$variants = array('regular');
 							}
+							
+							/* standardize all '400' to 'regular', and '400italic' to 'italic',
+							 * and 'bold' to 700 and bolditalic to 700italic, and 'light' to 300
+							 * to match Google's naming convention */
+							if($variants && is_array($variants)){
+								foreach($variants as $key => $val){
+									if($val == '400' || $val == 400){$variants[$key] = 'regular';}
+									if($val == '400italic'){$variants[$key] = 'italic';}
+									if(strtolower($val) == 'bold'){$variants[$key] = '700';}
+									if(strtolower($val) == 'bolditalic'){$variants[$key] = '700italic';}
+									if(strtolower($val) == 'light'){$variants[$key] = '300';}
+									if(strtolower($val) == 'lightitalic'){$variants[$key] = '300italic';}
+								}
+							}
+							
+							/* set the options */
+							$this->options['googlefont_selections'][$name]['family'] = $family;
+							$this->options['googlefont_selections'][$name]['variants'] = $variants;
+							
+							/* leave subsets blank for the form javascript to handle it at run time because not all are latin */
+							$this->options['googlefont_selections'][$name]['subsets'] = array();
+							
+							/* clear old option */
+							$this->options[$option] = '';
 						}
-						
-						/* set the options */
-						$this->options['googlefont_selections'][$name]['family'] = $family;
-						$this->options['googlefont_selections'][$name]['variants'] = $variants;
-						
-						/* leave subsets blank for the form javascript to handle it at run time because not all are latin */
-						$this->options['googlefont_selections'][$name]['subsets'] = array();
-						
-						/* clear old option */
-						$this->options[$option] = '';
+					}else{
+						/* skip it if it has already been converted */
+						if(!isset($this->options['googlefont_selections'][$name]['family']) || !$this->options['googlefont_selections'][$name]['family']){
+							/*working with the old array or empty array, set new array to empty for this font */
+							$this->options['googlefont_selections'][$name] = array(
+									'family' => null,
+									'variants' => array(),
+									'subsets' => array()
+								);
+								
+							/* clear old option */
+							$this->options[$option] = '';
+						}
 					}
 				}
-			}
 			
-			//save the changes
-			$this->saveAdminOptions();
+				//note that we've made the conversion from prior to 3.0
+				$this->options['googlefont_data_converted'] = true;
+				
+				//save the changes
+				$this->saveAdminOptions();
+			}
 		}
 		
 		
@@ -864,7 +977,7 @@ if (!class_exists('googlefonts')) {
         function admin_menu_link() {
             //If you change this from add_options_page, MAKE SURE you change the filter_plugin_actions function (below) to
             //reflect the page filename (ie - options-general.php) of the page your plugin is under!
-            add_options_page('Google Fonts', 'Google Fonts', 10, basename(__FILE__), array(&$this,'admin_options_page'));
+            add_options_page('Google Fonts', 'Google Fonts', 'manage_options', basename(__FILE__), array(&$this,'admin_options_page'));
             add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), array(&$this, 'filter_plugin_actions'), 10, 2 );
         }
         
@@ -923,8 +1036,8 @@ if (!class_exists('googlefonts')) {
         * Adds settings/options page
         */
         function admin_options_page() { 
-            if($_POST['googlefonts_save']){
- 
+			$message = null;
+            if(isset($_POST['googlefonts_save']) && $_POST['googlefonts_save']){
                 if($this->gf_handle_submission($_POST)){
                     $message = '<div class="updated"><p>' . __('Success! Your changes were sucessfully saved!', $this->localizationDomain) . '</p></div>';
 				}else{
@@ -950,7 +1063,7 @@ if (!class_exists('googlefonts')) {
 						
 						<h2><?php _e('Select Fonts', $this->localizationDomain);?></h2>
 						
-						<?php echo $message;?>
+						<?php if($message){echo $message;} ?>
 						
 						<?php 
 							/* This call gets all the font boxes and also sets some of the class options.
@@ -981,8 +1094,148 @@ if (!class_exists('googlefonts')) {
 					</td>
 				  </tr>
 				</table>
+				
+				<script type="text/javascript">
+					jQuery(document).ready(function() {
+						jQuery('.webfonts-select').change(function() {
+							var gf_aj_name = jQuery(this).parent().attr("id");
+							var gf_aj_family = jQuery(this).val();
+					
+							var data = {
+								action: 'googlefont_action',
+								security: '<?php wp_create_nonce("gf-string");?>',
+								googlefont_ajax_family: gf_aj_family,
+								googlefont_ajax_name: gf_aj_name
+							};
+							
+							if(gf_aj_family == '' || gf_aj_family == 'off'){
+								gf_reset_selections(gf_aj_name, gf_aj_family);
+								return false;
+							}else{						
+								jQuery('#' + gf_aj_name + ' .webfonts-waiting').html('<div class="gfspinner"></div>');
+								jQuery.post(ajaxurl, data, function(response) {
+									jQuery('#' + gf_aj_name + ' .webfonts-waiting').html('');
+									jQuery('#' + gf_aj_name + ' .webfonts-selections').replaceWith(response);
+									gf_reset_selections(gf_aj_name, gf_aj_family);
+									show_selected_items(jQuery('#' + gf_aj_name));
+								});
+							}
+						});
+						
+						jQuery('.show_hide').click(function() {
+							
+							var parent = jQuery(this).parent();
+							
+							if (jQuery(this).hasClass("showing")){
+								hide_selected_items(parent);
+							}else{
+								show_selected_items(parent);
+							}
+							
+							return false;
+						});
+						
+						
+						/* update the selections on change */
+						function gf_reset_selections(fontblock, selected_font) {
+							
+							var name = get_normalized_name(selected_font);
+							var parent = jQuery('#' + fontblock);
+							var parentid = jQuery(parent).attr("id");
+								
+							if(selected_font != '' && selected_font != 'off'){										
+								/* pre select variant and character set */
+								pre_select_items(parent, name);
+							}else{
+								/* clear all the items and hide them */
+								jQuery('#' + parentid + ' .webfonts-variants :checked').attr('checked', false);
+								jQuery('#' + parentid + ' .webfonts-usage :checked').attr('checked', false);
+								jQuery('#' + parentid + ' .webfonts-subsets :checked').attr('checked', false);
+								jQuery('#' + parentid + '_css').val(' ');
+
+								hide_selected_items(parent);
+							}
+						};
+						
+						function show_selected_items(parent){
+							/* limit all our actions to just within this specific selection */
+							var parentid = jQuery(parent).attr("id");
+							jQuery('#show_hide-' + parentid ).addClass('showing');
+							jQuery('#show_hide-' + parentid ).html('Hide Options');
+							jQuery('#' + parentid + ' .webfonts-selections').fadeIn(500);
+						}
+						
+						function hide_selected_items(parent){
+							/* limit all our actions to just within this specific selection */
+							var parentid = jQuery(parent).attr("id");
+							jQuery('#show_hide-' + parentid ).removeClass('showing');
+							jQuery('#show_hide-' + parentid ).html('Show Options');
+							jQuery('#' + parentid + ' .webfonts-selections').fadeOut(500);
+						}
+						
+						function get_normalized_name(name){
+							return (name.replace(" ","-"));
+						}
+						
+						function pre_select_items(parent, normalized){	
+							var parentid = jQuery(parent).attr('id');
+							/* select 'regular' variant if available, or only variant, or first one */
+							var variants = jQuery('#' + parentid + ' .variant-' + normalized + ' .check');
+							var regular = jQuery('#' + parentid + ' .variant-' + normalized + ' [value="regular"]');
+							
+							if(variants.size() > 1){
+								if(regular.size()==1){
+									regular.attr('checked',true);
+								}else{
+									variants.first().attr('checked',true)
+								}
+							}
+							if(variants.size()==1){
+								variants.attr('checked',true);
+								variants.attr('readonly','readonly');
+							}
+							
+							/* select latin subset if available, or only subset, or first one */
+							var subsets = jQuery('#' + parentid + ' .subset-' + normalized + ' .check');
+							var latin = jQuery('#' + parentid + ' .subset-' + normalized + ' [value="latin"]');
+							
+							if(subsets.size() > 1){
+								if(latin.size()==1){
+									latin.attr('checked',true);
+								}else{
+									subsets.first().attr('checked',true)
+								}
+							}
+							if(subsets.size()==1){
+								subsets.attr('checked',true);
+								subsets.attr('readonly','readonly');
+							}
+							
+						}
+					});
+				</script>
 		<?php
 		} //end admin_options_page
+		
+		// ajax handling
+		function googlefont_action_callback() {
+			$name = $_POST['googlefont_ajax_name'];
+			$family = $_POST['googlefont_ajax_family'];
+			$normalized_name = $this->gf_normalize_font_name($family);
+			$variants = $this->gf_get_font_data_by_family($name, $family, 'variants');
+			$subsets = $this->gf_get_font_data_by_family($name, $family, 'subsets');
+			
+			if(!$variants){
+				$variants = '<input type="checkbox" name="'.$name.'[variants][]" value="regular" class="check '.$normalized_name.' blank"> <label>Normal 400</label>';
+			}
+			if(!$subsets){
+				$subsets = '<input type="checkbox" name="'.$name.'[subsets][]" value="latin" class="check '.$normalized_name.' blank"> <label>Latin</label>';
+			}
+			
+			echo $this->gf_get_font_selections($name, $variants, $subsets);
+			die();
+		}
+		
 	} //End Class
 } //End if class exists statement
 

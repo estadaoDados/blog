@@ -17,10 +17,10 @@ global $seedprod_comingsoon;
   <meta name="description" content="<?php echo esc_attr($site_description);?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <?php if(substr($sc_jdt['comingsoon_body_font'], 0, 1) != '_'): ?>
-  <link href='http://fonts.googleapis.com/css?family=<?php echo $sc_jdt['comingsoon_body_font'] ?>&v1' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=<?php echo $sc_jdt['comingsoon_body_font'] ?>&v1' rel='stylesheet' type='text/css'>
   <?php endif;?>
   <?php if(substr($sc_jdt['comingsoon_headline_font'], 0, 1) != '_'): ?>
-  <link href='http://fonts.googleapis.com/css?family=<?php echo $sc_jdt['comingsoon_headline_font'] ?>&v1' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=<?php echo $sc_jdt['comingsoon_headline_font'] ?>&v1' rel='stylesheet' type='text/css'>
   <?php endif;?>
   <?php  do_action( 'sc_head'); ?>
 

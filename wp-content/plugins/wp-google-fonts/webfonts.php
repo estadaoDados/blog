@@ -30,8 +30,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -87,9 +87,9 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
+    "greek",
     "latin-ext",
-    "greek"
+    "latin"
    ]
   },
   {
@@ -99,8 +99,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -110,8 +110,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -121,8 +121,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -147,8 +147,8 @@ $fonts = '{
     "900italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -163,8 +163,8 @@ $fonts = '{
     "900italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -174,8 +174,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -226,8 +226,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -257,8 +257,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -271,8 +271,8 @@ $fonts = '{
     "700italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -282,8 +282,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -303,8 +303,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -348,8 +348,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -359,8 +359,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -370,10 +370,10 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "cyrillic",
-    "latin",
+    "cyrillic-ext",
     "latin-ext",
-    "cyrillic-ext"
+    "cyrillic",
+    "latin"
    ]
   },
   {
@@ -406,12 +406,12 @@ $fonts = '{
     "700italic"
    ],
    "subsets": [
+    "cyrillic-ext",
+    "greek",
+    "latin-ext",
     "cyrillic",
     "latin",
-    "greek-ext",
-    "latin-ext",
-    "greek",
-    "cyrillic-ext"
+    "greek-ext"
    ]
   },
   {
@@ -451,8 +451,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -473,8 +473,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -484,8 +484,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -505,8 +505,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -519,8 +519,8 @@ $fonts = '{
     "700italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -533,13 +533,13 @@ $fonts = '{
     "700italic"
    ],
    "subsets": [
+    "cyrillic-ext",
+    "greek",
+    "vietnamese",
+    "latin-ext",
     "cyrillic",
     "latin",
-    "greek-ext",
-    "latin-ext",
-    "greek",
-    "cyrillic-ext",
-    "vietnamese"
+    "greek-ext"
    ]
   },
   {
@@ -549,8 +549,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -560,8 +560,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -597,8 +597,8 @@ $fonts = '{
     "700italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -660,8 +660,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -671,8 +671,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -682,8 +682,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -693,8 +693,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -704,8 +704,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -791,8 +791,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -843,8 +843,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -856,8 +856,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -877,8 +877,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -898,8 +898,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -919,8 +919,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -930,8 +930,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -943,8 +943,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -954,8 +954,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1005,8 +1005,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1026,8 +1026,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1037,8 +1037,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1048,8 +1048,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1070,8 +1070,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1081,8 +1081,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1092,8 +1092,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1207,8 +1207,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1218,8 +1218,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1229,8 +1229,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1242,10 +1242,10 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "greek-ext",
+    "greek",
     "latin-ext",
-    "greek"
+    "latin",
+    "greek-ext"
    ]
   },
   {
@@ -1298,10 +1298,10 @@ $fonts = '{
     "700italic"
    ],
    "subsets": [
-    "latin",
-    "greek-ext",
+    "greek",
     "latin-ext",
-    "greek"
+    "latin",
+    "greek-ext"
    ]
   },
   {
@@ -1342,8 +1342,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1354,8 +1354,8 @@ $fonts = '{
     "italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1365,8 +1365,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1376,8 +1376,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1408,8 +1408,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1429,8 +1429,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1477,8 +1477,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1510,8 +1510,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1521,8 +1521,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1534,11 +1534,11 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "cyrillic",
-    "latin",
-    "latin-ext",
+    "cyrillic-ext",
     "greek",
-    "cyrillic-ext"
+    "latin-ext",
+    "cyrillic",
+    "latin"
    ]
   },
   {
@@ -1558,8 +1558,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1569,8 +1569,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1642,8 +1642,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1708,8 +1708,8 @@ $fonts = '{
     "italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1734,8 +1734,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1758,9 +1758,9 @@ $fonts = '{
     "700italic"
    ],
    "subsets": [
+    "latin-ext",
     "cyrillic",
-    "latin",
-    "latin-ext"
+    "latin"
    ]
   },
   {
@@ -1770,8 +1770,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1781,8 +1781,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1884,8 +1884,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1895,8 +1895,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1906,12 +1906,12 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
+    "cyrillic-ext",
+    "greek",
+    "latin-ext",
     "cyrillic",
     "latin",
-    "greek-ext",
-    "latin-ext",
-    "greek",
-    "cyrillic-ext"
+    "greek-ext"
    ]
   },
   {
@@ -1921,8 +1921,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1932,8 +1932,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1944,8 +1944,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1955,8 +1955,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1966,8 +1966,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -1993,8 +1993,8 @@ $fonts = '{
     "800"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2004,8 +2004,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2049,8 +2049,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2060,8 +2060,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2071,11 +2071,11 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "cyrillic",
-    "latin",
-    "latin-ext",
     "cyrillic-ext",
-    "vietnamese"
+    "vietnamese",
+    "latin-ext",
+    "cyrillic",
+    "latin"
    ]
   },
   {
@@ -2085,8 +2085,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2096,8 +2096,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2110,8 +2110,8 @@ $fonts = '{
     "700italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2132,8 +2132,8 @@ $fonts = '{
     "900"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2144,8 +2144,8 @@ $fonts = '{
     "900"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2155,8 +2155,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2166,8 +2166,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2187,8 +2187,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2199,8 +2199,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2220,8 +2220,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2231,8 +2231,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2242,8 +2242,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2270,8 +2270,8 @@ $fonts = '{
     "900italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2369,8 +2369,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2380,8 +2380,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2401,8 +2401,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2444,8 +2444,8 @@ $fonts = '{
     "italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2465,10 +2465,10 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "cyrillic",
-    "latin",
+    "cyrillic-ext",
     "latin-ext",
-    "cyrillic-ext"
+    "cyrillic",
+    "latin"
    ]
   },
   {
@@ -2478,8 +2478,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2489,8 +2489,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2530,8 +2530,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2541,6 +2541,17 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
+    "latin"
+   ]
+  },
+  {
+   "kind": "webfonts#webfont",
+   "family": "Fruktur",
+   "variants": [
+    "regular"
+   ],
+   "subsets": [
+    "latin-ext",
     "latin"
    ]
   },
@@ -2579,13 +2590,24 @@ $fonts = '{
   },
   {
    "kind": "webfonts#webfont",
+   "family": "Gabriela",
+   "variants": [
+    "regular"
+   ],
+   "subsets": [
+    "latin-ext",
+    "latin"
+   ]
+  },
+  {
+   "kind": "webfonts#webfont",
    "family": "Gafata",
    "variants": [
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2605,8 +2627,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2619,8 +2641,8 @@ $fonts = '{
     "700italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2633,8 +2655,8 @@ $fonts = '{
     "700italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2685,8 +2707,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2706,8 +2728,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2717,8 +2739,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2789,8 +2811,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2810,8 +2832,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2821,8 +2843,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2832,8 +2854,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2845,8 +2867,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2856,8 +2878,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2867,8 +2889,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2878,8 +2900,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2889,8 +2911,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2921,8 +2943,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2932,8 +2954,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2953,8 +2975,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -2984,8 +3006,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3120,8 +3142,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3132,8 +3154,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3143,8 +3165,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3165,8 +3187,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3189,10 +3211,10 @@ $fonts = '{
     "700italic"
    ],
    "subsets": [
-    "cyrillic",
-    "latin",
+    "cyrillic-ext",
     "latin-ext",
-    "cyrillic-ext"
+    "cyrillic",
+    "latin"
    ]
   },
   {
@@ -3212,8 +3234,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3243,8 +3265,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3254,8 +3276,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3265,8 +3287,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3314,8 +3336,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3347,8 +3369,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3371,12 +3393,12 @@ $fonts = '{
     "600"
    ],
    "subsets": [
+    "cyrillic-ext",
+    "greek",
+    "latin-ext",
     "cyrillic",
     "latin",
-    "greek-ext",
-    "latin-ext",
-    "greek",
-    "cyrillic-ext"
+    "greek-ext"
    ]
   },
   {
@@ -3420,8 +3442,8 @@ $fonts = '{
     "700italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3431,8 +3453,19 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
+   ]
+  },
+  {
+   "kind": "webfonts#webfont",
+   "family": "Kavoon",
+   "variants": [
+    "regular"
+   ],
+   "subsets": [
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3442,8 +3475,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3453,9 +3486,9 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
+    "latin-ext",
     "cyrillic",
-    "latin",
-    "latin-ext"
+    "latin"
    ]
   },
   {
@@ -3495,8 +3528,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3506,8 +3539,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3559,8 +3592,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3629,9 +3662,9 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
+    "latin-ext",
     "cyrillic",
-    "latin",
-    "latin-ext"
+    "latin"
    ]
   },
   {
@@ -3643,8 +3676,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3666,8 +3699,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3678,8 +3711,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3689,8 +3722,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3700,8 +3733,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3722,10 +3755,10 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "cyrillic",
-    "latin",
+    "cyrillic-ext",
     "latin-ext",
-    "cyrillic-ext"
+    "cyrillic",
+    "latin"
    ]
   },
   {
@@ -3821,8 +3854,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3884,8 +3917,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3915,8 +3948,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3926,8 +3959,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3937,9 +3970,9 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
+    "latin-ext",
     "cyrillic",
-    "latin",
-    "latin-ext"
+    "latin"
    ]
   },
   {
@@ -3949,8 +3982,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -3970,9 +4003,9 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
+    "latin-ext",
     "cyrillic",
-    "latin",
-    "latin-ext"
+    "latin"
    ]
   },
   {
@@ -4029,8 +4062,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4050,8 +4083,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4081,8 +4114,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4093,8 +4126,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4122,6 +4155,20 @@ $fonts = '{
   },
   {
    "kind": "webfonts#webfont",
+   "family": "Merriweather Sans",
+   "variants": [
+    "300",
+    "regular",
+    "700",
+    "800"
+   ],
+   "subsets": [
+    "latin-ext",
+    "latin"
+   ]
+  },
+  {
+   "kind": "webfonts#webfont",
    "family": "Metal",
    "variants": [
     "regular"
@@ -4137,8 +4184,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4148,8 +4195,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4179,8 +4226,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4220,8 +4267,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4231,8 +4278,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4242,8 +4289,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4253,8 +4300,8 @@ $fonts = '{
     "italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4265,8 +4312,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4296,8 +4343,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4391,8 +4438,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4402,8 +4449,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4413,8 +4460,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4424,8 +4471,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4435,8 +4482,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4446,8 +4493,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4470,8 +4517,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4497,8 +4544,8 @@ $fonts = '{
     "800"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4508,8 +4555,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4520,8 +4567,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4531,8 +4578,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4576,8 +4623,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4587,8 +4634,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4611,9 +4658,9 @@ $fonts = '{
     "700italic"
    ],
    "subsets": [
-    "latin",
+    "vietnamese",
     "latin-ext",
-    "vietnamese"
+    "latin"
    ]
   },
   {
@@ -4643,8 +4690,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "greek"
+    "greek",
+    "latin"
    ]
   },
   {
@@ -4758,8 +4805,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4770,8 +4817,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4782,8 +4829,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4802,13 +4849,13 @@ $fonts = '{
     "800italic"
    ],
    "subsets": [
+    "cyrillic-ext",
+    "greek",
+    "vietnamese",
+    "latin-ext",
     "cyrillic",
     "latin",
-    "greek-ext",
-    "latin-ext",
-    "greek",
-    "cyrillic-ext",
-    "vietnamese"
+    "greek-ext"
    ]
   },
   {
@@ -4820,13 +4867,13 @@ $fonts = '{
     "700"
    ],
    "subsets": [
+    "cyrillic-ext",
+    "greek",
+    "vietnamese",
+    "latin-ext",
     "cyrillic",
     "latin",
-    "greek-ext",
-    "latin-ext",
-    "greek",
-    "cyrillic-ext",
-    "vietnamese"
+    "greek-ext"
    ]
   },
   {
@@ -4836,10 +4883,10 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "cyrillic",
-    "latin",
+    "cyrillic-ext",
     "latin-ext",
-    "cyrillic-ext"
+    "cyrillic",
+    "latin"
    ]
   },
   {
@@ -4863,8 +4910,8 @@ $fonts = '{
     "italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4874,8 +4921,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4897,8 +4944,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4923,8 +4970,8 @@ $fonts = '{
     "900italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4934,8 +4981,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4957,8 +5004,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4968,8 +5015,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -4979,10 +5026,10 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "cyrillic",
-    "latin",
+    "cyrillic-ext",
     "latin-ext",
-    "cyrillic-ext"
+    "cyrillic",
+    "latin"
    ]
   },
   {
@@ -4995,9 +5042,9 @@ $fonts = '{
     "700italic"
    ],
    "subsets": [
+    "latin-ext",
     "cyrillic",
-    "latin",
-    "latin-ext"
+    "latin"
    ]
   },
   {
@@ -5008,9 +5055,9 @@ $fonts = '{
     "700"
    ],
    "subsets": [
+    "latin-ext",
     "cyrillic",
-    "latin",
-    "latin-ext"
+    "latin"
    ]
   },
   {
@@ -5021,9 +5068,9 @@ $fonts = '{
     "700"
    ],
    "subsets": [
+    "latin-ext",
     "cyrillic",
-    "latin",
-    "latin-ext"
+    "latin"
    ]
   },
   {
@@ -5079,8 +5126,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5090,8 +5137,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5103,8 +5150,8 @@ $fonts = '{
     "900"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5114,8 +5161,21 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "vietnamese",
+    "latin-ext",
+    "latin"
+   ]
+  },
+  {
+   "kind": "webfonts#webfont",
+   "family": "Patrick Hand SC",
+   "variants": [
+    "regular"
+   ],
+   "subsets": [
+    "vietnamese",
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5145,8 +5205,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5166,8 +5226,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5201,8 +5261,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5222,8 +5282,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5233,8 +5293,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5245,12 +5305,12 @@ $fonts = '{
     "700"
    ],
    "subsets": [
+    "cyrillic-ext",
+    "greek",
+    "latin-ext",
     "cyrillic",
     "latin",
-    "greek-ext",
-    "latin-ext",
-    "greek",
-    "cyrillic-ext"
+    "greek-ext"
    ]
   },
   {
@@ -5260,8 +5320,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5276,9 +5336,9 @@ $fonts = '{
     "900italic"
    ],
    "subsets": [
+    "latin-ext",
     "cyrillic",
-    "latin",
-    "latin-ext"
+    "latin"
    ]
   },
   {
@@ -5293,9 +5353,9 @@ $fonts = '{
     "900italic"
    ],
    "subsets": [
+    "latin-ext",
     "cyrillic",
-    "latin",
-    "latin-ext"
+    "latin"
    ]
   },
   {
@@ -5316,9 +5376,9 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
+    "latin-ext",
     "cyrillic",
-    "latin",
-    "latin-ext"
+    "latin"
    ]
   },
   {
@@ -5359,8 +5419,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5410,10 +5470,10 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "cyrillic",
-    "latin",
+    "greek",
     "latin-ext",
-    "greek"
+    "cyrillic",
+    "latin"
    ]
   },
   {
@@ -5423,8 +5483,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5444,9 +5504,9 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
+    "latin-ext",
     "cyrillic",
-    "latin",
-    "latin-ext"
+    "latin"
    ]
   },
   {
@@ -5469,8 +5529,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5480,8 +5540,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5505,8 +5565,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5519,8 +5579,8 @@ $fonts = '{
     "700italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5552,8 +5612,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5563,8 +5623,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5574,8 +5634,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5586,8 +5646,8 @@ $fonts = '{
     "italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5615,8 +5675,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5629,8 +5689,8 @@ $fonts = '{
     "700italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5640,8 +5700,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5651,8 +5711,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5702,8 +5762,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5713,8 +5773,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5724,8 +5784,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5735,8 +5795,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5746,8 +5806,56 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
+    "latin-ext",
+    "latin"
+   ]
+  },
+  {
+   "kind": "webfonts#webfont",
+   "family": "Roboto",
+   "variants": [
+    "100",
+    "100italic",
+    "300",
+    "300italic",
+    "regular",
+    "italic",
+    "500",
+    "500italic",
+    "700",
+    "700italic",
+    "900",
+    "900italic"
+   ],
+   "subsets": [
+    "cyrillic-ext",
+    "greek",
+    "vietnamese",
+    "latin-ext",
+    "cyrillic",
     "latin",
-    "latin-ext"
+    "greek-ext"
+   ]
+  },
+  {
+   "kind": "webfonts#webfont",
+   "family": "Roboto Condensed",
+   "variants": [
+    "300",
+    "300italic",
+    "regular",
+    "italic",
+    "700",
+    "700italic"
+   ],
+   "subsets": [
+    "cyrillic-ext",
+    "greek",
+    "vietnamese",
+    "latin-ext",
+    "cyrillic",
+    "latin",
+    "greek-ext"
    ]
   },
   {
@@ -5788,8 +5896,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5800,8 +5908,8 @@ $fonts = '{
     "italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5825,8 +5933,8 @@ $fonts = '{
     "italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5848,8 +5956,8 @@ $fonts = '{
     "900"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5860,8 +5968,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5871,8 +5979,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5882,8 +5990,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5893,8 +6001,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5904,10 +6012,10 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "cyrillic",
-    "latin",
+    "cyrillic-ext",
     "latin-ext",
-    "cyrillic-ext"
+    "cyrillic",
+    "latin"
    ]
   },
   {
@@ -5917,9 +6025,9 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
+    "latin-ext",
     "cyrillic",
-    "latin",
-    "latin-ext"
+    "latin"
    ]
   },
   {
@@ -5929,8 +6037,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5940,8 +6048,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5951,8 +6059,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5983,8 +6091,8 @@ $fonts = '{
     "italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -5994,8 +6102,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6015,8 +6123,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6039,9 +6147,9 @@ $fonts = '{
     "700italic"
    ],
    "subsets": [
+    "latin-ext",
     "cyrillic",
-    "latin",
-    "latin-ext"
+    "latin"
    ]
   },
   {
@@ -6061,8 +6169,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6072,8 +6180,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6083,9 +6191,9 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
+    "latin-ext",
     "cyrillic",
-    "latin",
-    "latin-ext"
+    "latin"
    ]
   },
   {
@@ -6105,8 +6213,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6129,8 +6237,8 @@ $fonts = '{
     "700italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6160,8 +6268,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6204,8 +6312,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6218,8 +6326,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6232,8 +6340,20 @@ $fonts = '{
     "900italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
+   ]
+  },
+  {
+   "kind": "webfonts#webfont",
+   "family": "Sintony",
+   "variants": [
+    "regular",
+    "700"
+   ],
+   "subsets": [
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6264,8 +6384,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6325,8 +6445,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6356,8 +6476,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6368,8 +6488,8 @@ $fonts = '{
     "italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6379,11 +6499,13 @@ $fonts = '{
     "200",
     "300",
     "regular",
+    "500",
     "600",
     "700",
     "900"
    ],
    "subsets": [
+    "latin-ext",
     "latin"
    ]
   },
@@ -6405,8 +6527,8 @@ $fonts = '{
     "900italic"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6436,8 +6558,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6467,8 +6589,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6478,9 +6600,9 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
+    "latin-ext",
     "cyrillic",
-    "latin",
-    "latin-ext"
+    "latin"
    ]
   },
   {
@@ -6501,8 +6623,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6512,8 +6634,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6524,8 +6646,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6622,6 +6744,17 @@ $fonts = '{
   },
   {
    "kind": "webfonts#webfont",
+   "family": "Tauri",
+   "variants": [
+    "regular"
+   ],
+   "subsets": [
+    "latin-ext",
+    "latin"
+   ]
+  },
+  {
+   "kind": "webfonts#webfont",
    "family": "Telex",
    "variants": [
     "regular"
@@ -6637,10 +6770,10 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "cyrillic",
-    "latin",
+    "cyrillic-ext",
     "latin-ext",
-    "cyrillic-ext"
+    "cyrillic",
+    "latin"
    ]
   },
   {
@@ -6650,8 +6783,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6696,8 +6829,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6717,8 +6850,8 @@ $fonts = '{
     "900"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6738,8 +6871,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6761,8 +6894,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6789,12 +6922,12 @@ $fonts = '{
     "700italic"
    ],
    "subsets": [
+    "cyrillic-ext",
+    "greek",
+    "latin-ext",
     "cyrillic",
     "latin",
-    "greek-ext",
-    "latin-ext",
-    "greek",
-    "cyrillic-ext"
+    "greek-ext"
    ]
   },
   {
@@ -6804,12 +6937,12 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
+    "cyrillic-ext",
+    "greek",
+    "latin-ext",
     "cyrillic",
     "latin",
-    "greek-ext",
-    "latin-ext",
-    "greek",
-    "cyrillic-ext"
+    "greek-ext"
    ]
   },
   {
@@ -6822,12 +6955,12 @@ $fonts = '{
     "700italic"
    ],
    "subsets": [
+    "cyrillic-ext",
+    "greek",
+    "latin-ext",
     "cyrillic",
     "latin",
-    "greek-ext",
-    "latin-ext",
-    "greek",
-    "cyrillic-ext"
+    "greek-ext"
    ]
   },
   {
@@ -6857,9 +6990,9 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
+    "latin-ext",
     "cyrillic",
-    "latin",
-    "latin-ext"
+    "latin"
    ]
   },
   {
@@ -6869,8 +7002,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6941,8 +7074,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -6952,8 +7085,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -7003,8 +7136,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -7014,8 +7147,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -7091,8 +7224,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -7102,8 +7235,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -7113,8 +7246,8 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -7137,8 +7270,8 @@ $fonts = '{
     "700"
    ],
    "subsets": [
-    "latin",
-    "latin-ext"
+    "latin-ext",
+    "latin"
    ]
   },
   {
@@ -7158,9 +7291,9 @@ $fonts = '{
     "regular"
    ],
    "subsets": [
+    "latin-ext",
     "cyrillic",
-    "latin",
-    "latin-ext"
+    "latin"
    ]
   },
   {
@@ -7185,3 +7318,4 @@ $fonts = '{
   }
  ]
 }';
+?>

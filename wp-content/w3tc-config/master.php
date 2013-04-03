@@ -90,7 +90,7 @@ return array(
 	'pgcache.file.locking' => false,
 	'pgcache.lifetime' => 3600,
 	'pgcache.memcached.servers' => array(
-		0 => '127.0.0.1:11211',
+		0 => 'blog.1qakgs.0001.sae1.cache.amazonaws.com:11211',
 	),
 	'pgcache.memcached.persistant' => true,
 	'pgcache.check.domain' => false,
@@ -442,7 +442,7 @@ return array(
 	'browsercache.other.etag' => true,
 	'browsercache.other.w3tc' => true,
 	'browsercache.other.replace' => true,
-	'browsercache.timestamp' => '1362416896',
+	'browsercache.timestamp' => '1363455667',
 	'mobile.enabled' => false,
 	'mobile.rgroups' => array(
 		'high' => array(
