@@ -1,0 +1,3 @@
+[submodule "potencial"]
+	path = potencial
+	url = git@github.com:estadaoDados/potencial.git
