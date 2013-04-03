@@ -3,3 +3,6 @@ wp-content/uploads/*
 sitemap.xml
 sitemap.xml.gz
 captcha/temp/*
+google*.html
+cache/
+ringue2014
